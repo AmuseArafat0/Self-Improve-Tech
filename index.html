@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Plan 2026-2031 · India → Australia / Germany</title>
+<meta name="description" content="A 5-year, execution-grade roadmap from AI EdTech operations in India to a skilled role in Australia or Germany. Verified June 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBFAF7; --bg2:#F3F1EB; --bg3:#EAE7DE;
+  --ink:#1B1C20; --ink2:#54565E; --ink3:#8B8D95;
+  --line:rgba(27,28,32,.13); --line2:rgba(27,28,32,.3);
+  --au:#7A5A00; --au-bg:#F5ECD2; --au-strong:#A87E00;
+  --de:#992721; --de-bg:#F8E6E3; --de-strong:#B23B33;
+  --go:#1E6B42; --go-bg:#E1F0E5;
+  --info:#1C5C9C; --info-bg:#E4EEF8;
+  --warn:#8A5800; --warn-bg:#F7ECD2;
+  --board:#15161A; --board-ink:#EDEBE3; --board-dim:#9A9CA6; --board-au:#E9C35B; --board-de:#F0857B; --board-go:#7DD3A0;
+  --r1:8px; --r2:12px; --r3:16px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --disp:"Archivo",var(--sans);
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#17181C; --bg2:#1F2026; --bg3:#282A31;
+    --ink:#EDEBE3; --ink2:#B2B4BC; --ink3:#83858E;
+    --line:rgba(237,235,227,.13); --line2:rgba(237,235,227,.3);
+    --au:#E3BD55; --au-bg:#322A10; --au-strong:#E9C35B;
+    --de:#F0857B; --de-bg:#3A1F1C; --de-strong:#F0857B;
+    --go:#7DD3A0; --go-bg:#15301F;
+    --info:#85B7EB; --info-bg:#14283C;
+    --warn:#EFC15A; --warn-bg:#33280F;
+    --board:#0E0F12; --board-ink:#EDEBE3;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.62}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.015em;line-height:1.18}
+h2{font-size:27px;font-weight:800;margin-bottom:6px}
+h3{font-size:18px;font-weight:700;margin:26px 0 10px}
+.sub{color:var(--ink2);max-width:72ch;margin-bottom:22px}
+.mono,td.n,.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
+a{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--info)}
+:focus-visible{outline:2px solid var(--info);outline-offset:2px;border-radius:4px}
+
+/* ---------- departure board hero ---------- */
+.board{background:var(--board);color:var(--board-ink);padding:34px 0 26px}
+.board .wrap{display:flex;flex-direction:column;gap:18px}
+.b-route{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--board-dim);display:flex;flex-wrap:wrap;gap:8px 26px}
+.b-route b{color:var(--board-ink);font-weight:600}
+.b-route .au{color:var(--board-au)} .b-route .de{color:var(--board-de)} .b-route .go{color:var(--board-go)}
+.board h1{font-size:clamp(30px,6vw,52px);font-weight:800;letter-spacing:-.025em}
+.board h1 .thin{color:var(--board-dim);font-weight:500}
+.b-line{height:1px;background:rgba(237,235,227,.18)}
+.b-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+.b-stat{font-family:var(--mono)}
+.b-stat .k{font-size:11px;letter-spacing:.16em;color:var(--board-dim);display:block;margin-bottom:3px}
+.b-stat .v{font-size:17px;font-weight:600}
+.cursor{display:inline-block;width:.55em;height:1.05em;background:var(--board-go);vertical-align:-2px;animation:blink 1.15s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding:8px 0}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;font-family:var(--disp);font-weight:700;font-size:13.5px;color:var(--ink2);background:none;border:none;padding:8px 13px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--ink);background:var(--bg2)}
+.tab.on{color:var(--bg);background:var(--ink)}
+.navprog{height:3px;background:var(--bg3);border-radius:3px;overflow:hidden;margin-bottom:8px}
+.navprog i{display:block;height:100%;width:0;background:var(--go);transition:width .4s}
+.navprog-row{display:flex;align-items:center;gap:10px}
+.navprog-row .pct{font-family:var(--mono);font-size:11px;color:var(--ink3);flex:none;padding-bottom:8px}
+
+/* ---------- layout ---------- */
+main{padding:34px 0 70px}
+section{display:none}
+section.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:840px){.grid3,.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);padding:18px 18px 16px}
+.card h4{font-family:var(--disp);font-size:15.5px;font-weight:700;margin-bottom:6px}
+.card p{font-size:14px;color:var(--ink2)}
+.card.au{border-top:3px solid var(--au-strong)}
+.card.de{border-top:3px solid var(--de-strong)}
+.card.go{border-top:3px solid var(--go)}
+.card.info{border-top:3px solid var(--info)}
+
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;padding:2px 9px;border-radius:999px;margin:2px 4px 2px 0;border:1px solid transparent}
+.badge.au{background:var(--au-bg);color:var(--au)}
+.badge.de{background:var(--de-bg);color:var(--de)}
+.badge.go{background:var(--go-bg);color:var(--go)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.dim{background:var(--bg3);color:var(--ink2)}
+
+.callout{border-radius:var(--r2);padding:16px 18px;margin:18px 0;font-size:14.5px}
+.callout b{font-family:var(--disp)}
+.callout.go{background:var(--go-bg);color:var(--ink)}
+.callout.warn{background:var(--warn-bg)}
+.callout.info{background:var(--info-bg)}
+.callout.de{background:var(--de-bg)}
+.callout.au{background:var(--au-bg)}
+
+table{width:100%;border-collapse:collapse;font-size:13.8px;margin:14px 0}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r2)}
+.tblwrap table{margin:0}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--ink3);padding:10px 12px;border-bottom:1px solid var(--line2);background:var(--bg2)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.n{white-space:nowrap;font-size:13px}
+
+ul.tick{list-style:none;margin:8px 0}
+ul.tick li{padding:5px 0 5px 24px;position:relative;font-size:14.5px;color:var(--ink2)}
+ul.tick li::before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;border-radius:2px;background:var(--ink3)}
+ul.tick.go li::before{background:var(--go)}
+ul.tick.au li::before{background:var(--au-strong)}
+ul.tick.de li::before{background:var(--de-strong)}
+ul.tick.warn li::before{background:var(--warn)}
+
+/* timeline strip */
+.years{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:20px 0}
+@media(max-width:760px){.years{grid-template-columns:1fr}}
+.yr{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);padding:14px}
+.yr .y{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink3)}
+.yr b{font-family:var(--disp);display:block;font-size:14.5px;margin:4px 0 6px}
+.yr p{font-size:12.8px;color:var(--ink2)}
+
+/* score bars */
+.score{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;font-size:13.5px}
+.score .bar{grid-column:1/-1;height:7px;border-radius:99px;background:var(--bg3);overflow:hidden;margin-bottom:8px}
+.score .bar i{display:block;height:100%;border-radius:99px}
+.score.au .bar i{background:var(--au-strong)}
+.score.de .bar i{background:var(--de-strong)}
+
+/* project cards */
+.proj{display:grid;gap:12px}
+.pcard{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--ink3);border-radius:var(--r1);padding:14px 16px}
+.pcard.l1{border-left-color:var(--go)} .pcard.l2{border-left-color:var(--info)} .pcard.l3{border-left-color:var(--warn)} .pcard.l4{border-left-color:var(--de-strong)}
+.pcard .ph{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.pcard h4{font-family:var(--disp);font-size:15px;font-weight:700}
+.pcard .pid{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.1em}
+.pcard p{font-size:13.8px;color:var(--ink2);margin:6px 0 8px}
+
+/* resource cards */
+.res{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);padding:15px 16px}
+.res h4{font-family:var(--disp);font-size:14.5px;font-weight:700;margin-bottom:4px}
+.res p{font-size:13.3px;color:var(--ink2);margin:5px 0 8px}
+.res .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink3);display:flex;flex-wrap:wrap;gap:4px 14px}
+
+/* schedule */
+.slot{display:grid;grid-template-columns:86px 1fr;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.slot:last-child{border-bottom:none}
+.slot .t{font-family:var(--mono);font-size:12.5px;color:var(--ink3);padding-top:2px}
+.slot b{font-family:var(--disp);font-size:14px;display:block}
+.slot p{font-size:13.3px;color:var(--ink2)}
+
+/* checklist */
+.ckgroup{margin-bottom:26px}
+.ckhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.ckhead .cnt{font-family:var(--mono);font-size:12px;color:var(--ink3)}
+.ck{display:flex;gap:12px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r1);padding:11px 14px;margin-bottom:7px;cursor:pointer}
+.ck:hover{border-color:var(--line2)}
+.ck input{width:17px;height:17px;margin-top:3px;accent-color:var(--go);flex:none;cursor:pointer}
+.ck .tx b{font-size:14px;font-weight:600;display:block}
+.ck .tx span{font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.ck.done .tx b{text-decoration:line-through;color:var(--ink3)}
+.btn{font-family:var(--disp);font-weight:700;font-size:13px;background:var(--ink);color:var(--bg);border:none;border-radius:999px;padding:9px 16px;cursor:pointer}
+.btn.ghost{background:var(--bg3);color:var(--ink2)}
+
+details{border:1px solid var(--line);border-radius:var(--r2);background:var(--bg2);margin:10px 0}
+details summary{cursor:pointer;font-family:var(--disp);font-weight:700;font-size:14.5px;padding:13px 16px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details summary::after{content:"+";font-family:var(--mono);color:var(--ink3)}
+details[open] summary::after{content:"–"}
+details .body{padding:0 16px 14px;font-size:14px;color:var(--ink2)}
+
+footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--ink3);font-size:13px}
+footer .wrap{display:grid;gap:8px}
+@media print{nav,.btn{display:none} section{display:block!important;page-break-after:always} .board{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+
+<header class="board">
+  <div class="wrap">
+    <div class="b-route">
+      <span>ROUTE <b>IN&nbsp;→&nbsp;<span class="au">AU</span>&nbsp;/&nbsp;<span class="de">DE</span></b></span>
+      <span>WINDOW <b>2026 – 2031</b></span>
+      <span>STATUS <b class="go" id="boardStatus">BOARDING · YEAR 1</b><span class="cursor"></span></span>
+    </div>
+    <h1>Flight Plan<span class="thin"> · AI EdTech Ops → Global AI Operations Specialist</span></h1>
+    <div class="b-line"></div>
+    <div class="b-stats">
+      <div class="b-stat"><span class="k">CURRENT ROLE</span><span class="v">Ops Exec + Research Analyst</span></div>
+      <div class="b-stat"><span class="k">PRIMARY TARGET</span><span class="v au" style="color:var(--board-au)">Australia</span></div>
+      <div class="b-stat"><span class="k">SECONDARY</span><span class="v" style="color:var(--board-de)">Germany (from 2028)</span></div>
+      <div class="b-stat"><span class="k">CORPUS TARGET</span><span class="v">₹20-26L by Y5</span></div>
+      <div class="b-stat"><span class="k">FIGURES VERIFIED</span><span class="v">Jun 2026</span></div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <div class="tabs" role="tablist" id="tabbar">
+      <button class="tab on" data-t="overview">Overview</button>
+      <button class="tab" data-t="profile">Profile</button>
+      <button class="tab" data-t="education">Education</button>
+      <button class="tab" data-t="countries">Countries &amp; Visas</button>
+      <button class="tab" data-t="skills">Skills</button>
+      <button class="tab" data-t="projects">20 Projects</button>
+      <button class="tab" data-t="resources">Resources</button>
+      <button class="tab" data-t="certs">Certifications</button>
+      <button class="tab" data-t="german">German</button>
+      <button class="tab" data-t="jobs">Jobs &amp; Strategy</button>
+      <button class="tab" data-t="money">Money</button>
+      <button class="tab" data-t="daily">Daily Plan</button>
+      <button class="tab" data-t="plan">Action Plan</button>
+      <button class="tab" data-t="checklist">Checklist</button>
+    </div>
+    <div class="navprog-row">
+      <div class="navprog" style="flex:1"><i id="navbar-fill"></i></div>
+      <span class="pct" id="navbar-pct">0% executed</span>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ================= OVERVIEW ================= -->
+<section id="overview" class="on">
+  <p class="eyebrow">Mission brief</p>
+  <h2>One file. Five years. Two runways.</h2>
+  <p class="sub">This page merges your two earlier roadmaps, answers the education question both of them skipped, expands the portfolio to 20 projects, and replaces every visa and salary figure with numbers verified in June 2026. It is built to be re-read every Sunday, not once.</p>
+
+  <div class="callout go"><b>The verdict, unchanged but sharpened:</b> Australia is the primary target. You already work in English, your operations + AI automation profile maps directly onto Australian job ads, and the employer-sponsored Skills in Demand (482) route gives you a path that does not depend on winning the brutally competitive points lottery. Germany stays live as a secondary runway from 2028, but only if you reach German B1. One honest 2026 correction: the points-tested 189 visa is now effectively reserved for healthcare and teaching at 85-95+ points, so your realistic Australian engines are <b>482 employer sponsorship</b> and <b>state-nominated 190 / regional 491</b>, in that order.</div>
+
+  <h3>The five years at a glance</h3>
+  <div class="years">
+    <div class="yr"><span class="y">Y1 · 2026-27</span><b>Foundation</b><p>IELTS/PTE 7+, GitHub live, 4 projects, Python + SQL basics, ₹2-3L saved.</p></div>
+    <div class="yr"><span class="y">Y2 · 2027-28</span><b>Technical identity</b><p>Python + APIs real, AWS cert, first paid remote/freelance work, "AI Operations Specialist" rebrand, ₹5-8L total.</p></div>
+    <div class="yr"><span class="y">Y3 · 2028-29</span><b>Deep tech</b><p>RAG + AI agents shipped, skills assessment lodged, NAATI CCL, 500+ network, ₹10-14L total.</p></div>
+    <div class="yr"><span class="y">Y4 · 2029-30</span><b>Market entry</b><p>8 public projects, AU-format resume, active interviews, EOI live, job offer target, ₹16-20L total.</p></div>
+    <div class="yr"><span class="y">Y5 · 2030-31</span><b>Migration</b><p>Visa lodged and granted, relocation, first role abroad, PR clock starts. ₹20-26L corpus deployed.</p></div>
+  </div>
+
+  <h3>Start this week, in this order</h3>
+  <ul class="tick go">
+    <li><b>Create the public GitHub profile</b> and push Project 01 (your WATI broadcast system, documented). This single artifact compounds for five straight years.</li>
+    <li><b>Book the English exam window.</b> Decide IELTS vs PTE Academic this month, sit a free mock, book the real exam for Sep-Oct 2026. Nothing else unlocks until this is done.</li>
+    <li><b>Open a separate migration savings account</b> with an automatic ₹8-15K monthly transfer. Name the account. Money with a name does not get spent.</li>
+    <li><b>Update LinkedIn headline</b> to "Operations Executive · AI Automation · Be10x" and post once about something you built. Visibility starts now, not in Year 3.</li>
+    <li><b>Read the Countries tab once, fully.</b> Then forget visas until your English score exists. Visa obsession before an English score is the most common way people burn Year 1.</li>
+  </ul>
+
+  <h3>What changed in this version</h3>
+  <div class="grid2">
+    <div class="card"><h4>2026 figures, not 2024 ones</h4><p>Blue Card €50,700 / €45,934, Chancenkarte €13,092, Australia CSIT AUD 79,499 from 1 Jul 2026, visa fees AUD 4,910, the 2025 abolition of Germany's 3-year fast-track citizenship, and the 2026 Australian points-test reform are all reflected.</p></div>
+    <div class="card"><h4>The education question, answered</h4><p>Your original brief asked whether a Master's, IGNOU, MBA or analytics degree is needed. Neither old file answered it. The Education tab now gives a clear verdict with a decision table.</p></div>
+    <div class="card"><h4>20 projects, mapped to your real work</h4><p>Expanded from 10 to 20. Projects 11-17 are formalisations of things you already do at Be10x, which makes them the fastest authentic portfolio wins available to you.</p></div>
+    <div class="card"><h4>Checklist that actually saves</h4><p>The old checklist forgot everything when the browser closed. This one persists in localStorage on your device, feeds the progress bar in the nav, and has a reset button if you ever need a clean slate.</p></div>
+    <div class="card"><h4>Corrected points math</h4><p>The old file claimed CAPM adds Australian visa points. It does not; no certification does. The real boosters for you are Superior English (+20), NAATI CCL Hindi (+5), state/regional nomination (+5/+15) and applying before age 33.</p></div>
+    <div class="card"><h4>Honest Germany routing</h4><p>Typical ops salaries in Germany sit below the 2026 Blue Card threshold, so your realistic conversion after a Chancenkarte is the Skilled Worker visa (§18a/b), not the Blue Card. The German tab and Money tab now plan for that.</p></div>
+  </div>
+
+  <div class="callout warn"><b>The one deadline that is biological, not bureaucratic:</b> Australian age points drop from 30 to 25 the day you turn 33. If you were in 10th standard in 2012, that day likely lands around 2029-30, exactly your invitation window. Every quarter of delay in Years 1-2 is a quarter of risk on 5 points you cannot buy back. Treat Year 1 with that urgency.</div>
+</section>
+
+<!-- ================= PROFILE ================= -->
+<section id="profile">
+  <p class="eyebrow">Honest position</p>
+  <h2>Profile analysis</h2>
+  <p class="sub">Your actual competitive position entering the international market: B.Com (2019), a 2019-2023 exam-preparation gap, and 3 years at an AI EdTech startup doing operations, research, Zoom/WATI management and Claude-based automation. No sugar, no doom.</p>
+
+  <div class="grid2">
+    <div class="card go"><h4>Strengths</h4>
+      <ul class="tick go">
+        <li>3 years of hands-on AI tool implementation in a real, revenue-generating EdTech business. Not theoretical, not a bootcamp.</li>
+        <li>Live GitHub-based automation work inside the company: workflow tools, parsers, trackers. Technical initiative beyond the job description.</li>
+        <li>WATI/WhatsApp ops + Zoom webinar management + competitor intelligence is a rare combination in non-tech operations candidates.</li>
+        <li>Research-analyst muscle: extracting structured insight from messy recordings is exactly what AI ops teams abroad need.</li>
+        <li>Early mover: "AI Operations" is formalising as a job family in 2025-27. You are arriving with it, not after it.</li>
+      </ul>
+    </div>
+    <div class="card de"><h4>Weaknesses</h4>
+      <ul class="tick de">
+        <li>No STEM/CS degree. Some visa assessors and recruiters filter on this; you must out-evidence it.</li>
+        <li>The 2019-2023 gap will be asked about in every serious interview. It needs one rehearsed, confident frame (below).</li>
+        <li>No public portfolio yet. Internal tools nobody can see are worth almost nothing in an international job search.</li>
+        <li>No English test score yet. Without it, literally every pathway in both countries is closed.</li>
+        <li>B.Com signals "finance/admin" to lazy screeners; your headline and resume must do the repositioning for them.</li>
+      </ul>
+    </div>
+    <div class="card info"><h4>Opportunities</h4>
+      <ul class="tick">
+        <li>Australia's Skills in Demand (482) visa lets an employer sponsor you in 4 years from now without any points contest.</li>
+        <li>n8n / RAG / agent skills are scarce in AU and DE mid-market companies; demand visibly exceeds supply in 2026 job ads.</li>
+        <li>Germany's Chancenkarte (since Jun 2024) lets you move first and job-hunt on the ground, removing the old job-offer wall.</li>
+        <li>EdTech operations experience transfers cleanly to SME operations, RevOps and customer-operations roles abroad.</li>
+        <li>Remote contract work for foreign clients in Years 2-3 builds the one thing money cannot buy: a foreign reference.</li>
+      </ul>
+    </div>
+    <div class="card"><h4>Risks</h4>
+      <ul class="tick warn">
+        <li>Age points: 30 → 25 at age 33, likely during your invitation window. The schedule has no slack for a lost year.</li>
+        <li>Australia's 2026 points-test reform may reshuffle scoring mid-plan. Re-verify on immi.homeaffairs.gov.au each year.</li>
+        <li>AI tooling churns fast; specific tools may die. Anchor learning to durable layers: Python, SQL, APIs, agent patterns.</li>
+        <li>Indian applicant volume is extreme in both queues. Generic profiles lose; your edge must be the public portfolio.</li>
+        <li>Immigration policy risk in both countries is real and rising. The dual-runway design exists precisely for this.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>How each weakness gets neutralised</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Weakness</th><th>Fix</th><th>Deadline</th></tr>
+    <tr><td>No tech degree</td><td>Stacked, verifiable evidence: AWS + Google certs, 20-project public GitHub, quantified case studies. In AI operations hiring, demonstrated systems beat degrees.</td><td class="n">Y1-Y3</td></tr>
+    <tr><td>2019-2023 gap</td><td>One truthful, rehearsed frame: deliberate competitive-exam preparation. Scripts below. Never apologise for it.</td><td class="n">Script ready M1</td></tr>
+    <tr><td>No public portfolio</td><td>GitHub live this month; one documented project per quarter minimum, written as Problem → Build → Outcome → Numbers.</td><td class="n">Repo by M1</td></tr>
+    <tr><td>No English score</td><td>IELTS Academic or PTE Academic, target band 7+ each (PTE 65+/79+ per skill). Highest-priority spend of Year 1.</td><td class="n">Exam by M5</td></tr>
+    <tr><td>B.Com signalling</td><td>LinkedIn headline + resume summary lead with "AI Operations / Automation", with B.Com as a detail line, not the identity.</td><td class="n">M1</td></tr>
+  </table></div>
+
+  <h3>The gap year, handled once and forever</h3>
+  <p class="sub">Four years of competitive-exam preparation is a known, common Indian path. Framed as deliberate discipline, it is not a red flag. Memorise these three; never improvise a fourth.</p>
+  <details><summary>Resume line (use verbatim)</summary><div class="body"><p><i>2019-2023 · Independent study, national competitive examination preparation.</i> Completed structured preparation for India's national-level competitive examinations, building rigorous self-directed study habits in quantitative aptitude, economics and policy analysis that now underpin my speed in learning new AI tooling.</p></div></details>
+  <details><summary>LinkedIn "About" paragraph</summary><div class="body"><p>After completing my B.Com in Accountancy and Finance, I spent four years preparing for India's highly competitive national examinations, a path with sub-1% selection rates that demands exceptional discipline. In 2023 I joined Be10x, an AI EdTech startup, and found the work I want to build a career on: AI-powered operations. Since then I have built automation systems across WhatsApp, Zoom, research and support workflows, and I publish what I build.</p></div></details>
+  <details><summary>Interview answer, spoken version (~40 seconds)</summary><div class="body"><p>"Between 2019 and 2023 I was preparing for India's national civil-service and banking examinations. They are extremely competitive, with acceptance rates under one percent, and the preparation itself is a full-time, structured discipline. I chose that path deliberately after graduation. When I joined Be10x in 2023, that same discipline let me move from operations support to building AI automation systems within a year. So the period gave me the exact study habits I now use to pick up new tools quickly."</p><p style="margin-top:8px"><b>The one rule:</b> state it flat, give the frame, move on. Apologising signals there is something to apologise for. There is not.</p></div></details>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education">
+  <p class="eyebrow">The unanswered question</p>
+  <h2>Do you need a Master's? Short answer: no.</h2>
+  <p class="sub">Your brief asked whether to do an MBA, M.Com, Business Analytics, Information Systems or an IGNOU degree, and whether to study in India first or target jobs directly. Here is the full answer your earlier files skipped.</p>
+
+  <div class="callout go"><b>Verdict:</b> Neither target country structurally rewards a Master's for your route. Australia gives a Bachelor's <span class="mono">15</span> points and a Master's the same <span class="mono">15</span> (only a doctorate gives 20). Germany only needs your existing degree to be <b>recognised</b> (anabin / ZAB Statement of Comparability), which your B.Com from a UGC-recognised university can achieve. Every hour and rupee a Master's would absorb produces more migration probability when spent on English score, portfolio, certifications and savings. <b>Target jobs directly. Do not study first.</b></div>
+
+  <h3>Decision table</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Option</th><th>Cost</th><th>Time</th><th>AU points</th><th>DE value</th><th>Career signal</th><th>Verdict</th></tr>
+    <tr><td><b>No Master's: certs + portfolio</b> (this roadmap)</td><td class="n">₹60-90K over 4 yrs</td><td class="n">parallel</td><td class="n">+0 (already 15)</td><td>Degree recognised; skills carry</td><td>Highest for AI ops hiring</td><td><span class="badge go">Recommended</span></td></tr>
+    <tr><td>IGNOU MBA / M.Com (distance)</td><td class="n">₹40-65K</td><td class="n">2-3 yrs</td><td class="n">+0</td><td>Marginal; recognised but adds little</td><td>Weak for AI ops; fine as a checkbox</td><td><span class="badge dim">Optional hedge only</span></td></tr>
+    <tr><td>Online analytics credential (IIT-M BS/Diploma in Data Science, or Georgia Tech OMSA later)</td><td class="n">₹1-3L+ (OMSA ~US$11K)</td><td class="n">2-3 yrs</td><td class="n">+0</td><td>Good if pivoting to pure data roles</td><td>Strong, but overlaps what certs already prove</td><td><span class="badge dim">Only if you pivot to data science</span></td></tr>
+    <tr><td>German public-university M.Sc. (English-taught: Business Analytics / Info Systems)</td><td class="n">Tuition ≈ €0-3K/yr + living ≈ €13K/yr</td><td class="n">2 yrs</td><td class="n">n/a</td><td><b>High:</b> 18-month job-seek permit after graduating + "recent graduate" Blue Card threshold €45,934</td><td>Strong inside Germany</td><td><span class="badge de">Plan B trigger only</span></td></tr>
+    <tr><td>Australian Master's</td><td class="n">AUD 60-90K (₹35-52L)</td><td class="n">2 yrs</td><td class="n">+5 AU study (+5 regional)</td><td>n/a</td><td>OK, but brutal cost and 2026 policy headwinds on student routes</td><td><span class="badge warn">Avoid unless funded</span></td></tr>
+  </table></div>
+
+  <h3>The IGNOU question, specifically</h3>
+  <p class="sub">An IGNOU M.Com or MBA is cheap, UGC-recognised, and can run quietly in the background without eating portfolio hours. It will not add a single Australian point and will not change your German eligibility. Do it only if (a) it costs you nothing emotionally, (b) it never displaces a portfolio or English hour, and (c) you accept it is a hedge, not a lever. If you ever feel "I should pause projects to focus on the degree," drop the degree.</p>
+
+  <h3>Plan B trigger, written down now so future-you cannot fudge it</h3>
+  <div class="callout de"><b>If by June 2028</b> you have an English score of 7+, six-plus public projects, an active application pipeline, and still zero interviews or sponsorship interest, then open the German M.Sc. route: apply Nov 2028-Jan 2029 for Winter 2029 intake (uni-assist, ZAB statement ≈ <span class="mono">€208</span>, blocked account ≈ <span class="mono">€13K/yr</span>). It converts your migration problem into a student-visa problem, which is structurally easier, and graduating in Germany unlocks the lower Blue Card threshold and an 18-month job-seek permit. Until that trigger fires, the answer to "should I do a Master's?" is no.</div>
+</section>
+
+<!-- ================= COUNTRIES ================= -->
+<section id="countries">
+  <p class="eyebrow">Two runways, scored for your profile</p>
+  <h2>Australia vs Germany, June 2026 edition</h2>
+  <p class="sub">Scored for an Indian B.Com graduate, ~3 years of AI operations experience, no tech degree, English-fluent, zero German. Every threshold below is the figure in force now, with its source named so you can re-verify in one click later.</p>
+
+  <div class="grid2">
+    <div class="card au">
+      <h4>🇦🇺 Australia · total <span class="mono">62.5 / 90</span></h4>
+      <div class="score au">
+        <span>Immigration ease (2026 reality)</span><span class="mono">6.5</span><div class="bar"><i style="width:65%"></i></div>
+        <span>AI-ops job market</span><span class="mono">7.5</span><div class="bar"><i style="width:75%"></i></div>
+        <span>Language barrier (10 = none)</span><span class="mono">9.0</span><div class="bar"><i style="width:90%"></i></div>
+        <span>Competition from Indian applicants</span><span class="mono">5.0</span><div class="bar"><i style="width:50%"></i></div>
+        <span>Cost of migration</span><span class="mono">5.5</span><div class="bar"><i style="width:55%"></i></div>
+        <span>PR / citizenship pathway</span><span class="mono">7.0</span><div class="bar"><i style="width:70%"></i></div>
+        <span>Long-term career growth</span><span class="mono">7.5</span><div class="bar"><i style="width:75%"></i></div>
+        <span>Quality of life</span><span class="mono">8.0</span><div class="bar"><i style="width:80%"></i></div>
+        <span>Salary vs cost of living</span><span class="mono">6.5</span><div class="bar"><i style="width:65%"></i></div>
+      </div>
+      <p>English is already your working language; your job titles translate without adaptation; the employer-sponsored route sidesteps the points contest entirely.</p>
+    </div>
+    <div class="card de">
+      <h4>🇩🇪 Germany · total <span class="mono">55.5 / 90</span></h4>
+      <div class="score de">
+        <span>Immigration ease (Chancenkarte)</span><span class="mono">7.0</span><div class="bar"><i style="width:70%"></i></div>
+        <span>AI-ops job market</span><span class="mono">6.5</span><div class="bar"><i style="width:65%"></i></div>
+        <span>Language barrier (10 = none)</span><span class="mono">3.0</span><div class="bar"><i style="width:30%"></i></div>
+        <span>Competition from Indian applicants</span><span class="mono">6.5</span><div class="bar"><i style="width:65%"></i></div>
+        <span>Cost of migration</span><span class="mono">6.5</span><div class="bar"><i style="width:65%"></i></div>
+        <span>PR / citizenship pathway</span><span class="mono">6.5</span><div class="bar"><i style="width:65%"></i></div>
+        <span>Long-term career growth</span><span class="mono">7.0</span><div class="bar"><i style="width:70%"></i></div>
+        <span>Quality of life</span><span class="mono">7.5</span><div class="bar"><i style="width:75%"></i></div>
+        <span>Salary vs cost of living</span><span class="mono">5.0</span><div class="bar"><i style="width:50%"></i></div>
+      </div>
+      <p>The Chancenkarte is the easiest legal entry either country offers you. The job market behind it is 70-80% closed without B2 German, and ops salaries often sit below the Blue Card bar.</p>
+    </div>
+  </div>
+
+  <h3>🇦🇺 Australia: the three engines, ranked for you</h3>
+  <div class="grid3">
+    <div class="card au"><h4>1 · Skills in Demand visa (482)</h4>
+      <p><b>Your most realistic engine.</b> Employer sponsors you; no points test. Core Skills stream needs an occupation on the CSOL, <span class="mono">1+ yr</span> relevant experience, modest English (IELTS <span class="mono">5.0</span> overall), and pay of at least the Core Skills Income Threshold: <span class="mono">AUD 76,515</span> now, <span class="mono">AUD 79,499</span> for nominations lodged from <span class="mono">1 Jul 2026</span> (indexed yearly). Up to 4 years; PR via 186 after 2 years with the sponsor. Applicant fee <span class="mono">AUD 3,210</span>; most sponsor costs sit with the employer.</p>
+      <span class="badge go">No points contest</span><span class="badge dim">Needs a job offer</span>
+    </div>
+    <div class="card au"><h4>2 · State 190 / Regional 491</h4>
+      <p><b>The parallel lottery ticket.</b> Points-tested PR (190) or 5-year regional provisional → PR via 191 (491, +15 points). Minimum <span class="mono">65</span> points, but 2025-26 rounds invited some occupations at 65 and others at 90+. Fee <span class="mono">AUD 4,910</span>. A points-test redesign is in progress for 2026-27: re-model your score every year, never assume last year's math.</p>
+      <span class="badge info">PR directly (190)</span><span class="badge warn">Competitive + reform risk</span>
+    </div>
+    <div class="card au"><h4>3 · ENS 186</h4>
+      <p><b>The PR landing after 482.</b> Direct employer-nominated permanent residence, normally after 2 years with your sponsor. Same CSIT salary floor applies. This is how the 482 engine ends in a passport-track outcome: 482 (2 yrs) → 186 (PR) → citizenship after 4 years of residence including 12 months as PR.</p>
+      <span class="badge go">The intended endgame</span>
+    </div>
+  </div>
+
+  <h3>Your realistic Australian points, modelled honestly</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Factor</th><th>Your likely claim (~2029 EOI)</th><th>Points</th></tr>
+    <tr><td>Age</td><td>25-32 if invited <b>before you turn 33</b>; 33-39 after</td><td class="n">30 → 25</td></tr>
+    <tr><td>English</td><td>Proficient (IELTS 7 / PTE 65 each) vs Superior (IELTS 8 / PTE 79 each)</td><td class="n">+10 / +20</td></tr>
+    <tr><td>Qualification</td><td>Bachelor's degree (B.Com). A Master's would add nothing here.</td><td class="n">+15</td></tr>
+    <tr><td>Overseas skilled employment</td><td>Years your assessor counts as skilled in the nominated occupation: realistically 3-4 counted by 2029 (assessors often deduct early years)</td><td class="n">+5 (3-4 yrs) / +10 (5-7)</td></tr>
+    <tr><td>NAATI CCL (Hindi)</td><td>Community-language test, sit online from India, ~AUD 220; result usable 3 years</td><td class="n">+5</td></tr>
+    <tr><td>Nomination</td><td>State 190 / Regional 491</td><td class="n">+5 / +15</td></tr>
+    <tr><td>Partner status</td><td>Single +10 · skilled partner +10 · partner with competent English +5 · otherwise 0</td><td class="n">0-10</td></tr>
+    <tr><td><b>Realistic range</b></td><td>Proficient English, 190, no partner points → ~70. Superior English + NAATI + 491 + single → up to ~100.</td><td class="n"><b>70-100</b></td></tr>
+  </table></div>
+  <div class="callout au"><b>Occupation code, the decision that everything hangs on:</b> your strongest candidates are <span class="mono">224712 Organisation &amp; Methods Analyst</span> and <span class="mono">224711 Management Consultant</span> (both VETASSESS-assessed, both fit process-improvement and automation work), with <span class="mono">261111 ICT Business Analyst</span> (ACS) as a stretch via the RPL route once you have ~6 years of ICT-flavoured evidence. Occupation lists and state lists shift every year; before paying any assessor, spend one paid session (₹10-25K) with a MARA-registered agent to confirm code, evidence strategy and list availability. That session is the highest-ROI ₹20K in this entire plan.</div>
+
+  <h3>🇩🇪 Germany: entry is easy, the job market is the wall</h3>
+  <div class="grid3">
+    <div class="card de"><h4>1 · Chancenkarte (entry)</h4>
+      <p>12-month job-seek residence. Qualify via a recognised degree (direct route) or <span class="mono">6</span> points (age, experience, language). Baseline language: German A1 <b>or</b> English B2. Proof of funds <span class="mono">€13,092</span> (<span class="mono">€1,091</span>/month, 2026) in a blocked account; fee <span class="mono">€75</span>. Part-time work to 20 h/week + 2-week job trials allowed. A follow-up card of up to 2 more years exists if you hold a qualifying offer.</p>
+      <span class="badge go">Move first, search on-ground</span>
+    </div>
+    <div class="card de"><h4>2 · Skilled Worker visa §18a/b (your likely conversion)</h4>
+      <p>Once you land an offer matching your recognised qualification, this is the realistic permit: no Blue-Card-level salary bar, pay must simply be standard for the role. Needs your B.Com recognised (anabin H+ university; get the ZAB Statement of Comparability, ≈ <span class="mono">€208</span>, in advance). Settlement permit typically after ~3 years with pension contributions and German skills.</p>
+      <span class="badge info">Most ops salaries route here</span>
+    </div>
+    <div class="card de"><h4>3 · EU Blue Card (if salary clears)</h4>
+      <p>2026 thresholds: <span class="mono">€50,700</span> standard; <span class="mono">€45,934</span> for shortage occupations, recent graduates (degree &lt;3 yrs old, not you) and experienced IT specialists without a degree. Ops/coordinator roles usually pay below this; senior automation/AI roles can clear it. PR after <span class="mono">27</span> months, or <span class="mono">21</span> with German B1.</p>
+      <span class="badge dim">Bonus, not the plan</span>
+    </div>
+  </div>
+  <div class="callout de"><b>Two honest 2026 corrections to your old file:</b> (1) Germany's 3-year fast-track citizenship was abolished in 2025; plan on <span class="mono">5 years</span> to naturalisation, dual citizenship still permitted. (2) Don't budget your German salary expectations against the Blue Card; budget against the Skilled Worker visa, which most €45-60K operations offers will use. Germany only enters your active plan if, by end of Year 2, you genuinely hold German B1 and still want it. Otherwise it stays a parked runway, and that is a fine outcome.</div>
+
+  <h3>Verify before every irreversible step</h3>
+  <ul class="tick">
+    <li><b>Australia:</b> immi.homeaffairs.gov.au (points calculator, fees, CSOL), vetassess.com.au, acs.org.au, each state's migration site, mara.gov.au for agents.</li>
+    <li><b>Germany:</b> make-it-in-germany.com (Chancenkarte self-check), anabin.kmk.org (university H+ status), kmk.org/zab (Statement of Comparability), the German Missions in India portal for appointment rules.</li>
+    <li>Rule: numbers on this page were true in June 2026. Before paying any fee above ₹10K, open the official source and confirm the figure that day.</li>
+  </ul>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <p class="eyebrow">What to learn, in what order</p>
+  <h2>The skill stack, ranked</h2>
+  <p class="sub">All fifteen skills from your brief, ranked by how much each one moves your probability of an international offer. Tier 1 is non-negotiable. Tier 2 is what makes you hard to replace. Tier 3 is context, learned cheaply once Tiers 1-2 exist.</p>
+
+  <div class="tblwrap"><table>
+    <tr><th>#</th><th>Skill</th><th>Tier</th><th>When</th><th>Why it ranks here</th></tr>
+    <tr><td class="n">01</td><td><b>Python</b></td><td><span class="badge go">T1</span></td><td class="n">Y1-Y2</td><td>The substrate under every serious automation, agent and data task. Without it you stay a tool-user; with it you become a builder.</td></tr>
+    <tr><td class="n">02</td><td><b>n8n</b></td><td><span class="badge go">T1</span></td><td class="n">Y1</td><td>Closest to your current work, fastest portfolio wins, huge SME demand in AU/DE, self-hostable (which enterprises love).</td></tr>
+    <tr><td class="n">03</td><td><b>APIs: REST, webhooks, auth</b></td><td><span class="badge go">T1</span></td><td class="n">Y1-Y2</td><td>The connective tissue of all automation. Reading API docs fluently is the single most underrated employable skill on this list.</td></tr>
+    <tr><td class="n">04</td><td><b>SQL</b></td><td><span class="badge go">T1</span></td><td class="n">Y1</td><td>Every ops/analyst JD abroad asks for it. Two months of effort, permanent payoff, frequently interview-tested.</td></tr>
+    <tr><td class="n">05</td><td><b>Git &amp; GitHub, properly</b></td><td><span class="badge go">T1</span></td><td class="n">Y1</td><td>Branches, PRs, READMEs, Actions basics. Your portfolio lives here; sloppy Git hygiene silently discredits good projects.</td></tr>
+    <tr><td class="n">06</td><td><b>Prompt &amp; context engineering</b></td><td><span class="badge go">T1</span></td><td class="n">Have → formalise Y1</td><td>You already do this at Be10x. Formalise it: evals, structured outputs, tool use, system-prompt design. Document it publicly.</td></tr>
+    <tr><td class="n">07</td><td><b>AI Agents (function calling, MCP, LangGraph/CrewAI)</b></td><td><span class="badge info">T2</span></td><td class="n">Y2-Y3</td><td>The 2026-28 differentiator. Companies have models; they lack people who can wire them into reliable multi-step workflows.</td></tr>
+    <tr><td class="n">08</td><td><b>RAG (embeddings, vector DBs, retrieval design)</b></td><td><span class="badge info">T2</span></td><td class="n">Y2-Y3</td><td>The default enterprise AI pattern. Knowing chunking, retrieval quality and evaluation puts you above 90% of "AI enthusiasts".</td></tr>
+    <tr><td class="n">09</td><td><b>Data analytics (Excel → pandas)</b></td><td><span class="badge info">T2</span></td><td class="n">Y1-Y2</td><td>Turns your research-analyst instinct into evidence: every project gets a measured outcome, every interview gets numbers.</td></tr>
+    <tr><td class="n">10</td><td><b>Power BI</b></td><td><span class="badge info">T2</span></td><td class="n">Y2</td><td>The dashboard lingua franca of AU/DE mid-market and enterprise. Pairs naturally with your reporting work; PL-300 optional.</td></tr>
+    <tr><td class="n">11</td><td><b>Cloud basics (AWS)</b></td><td><span class="badge info">T2</span></td><td class="n">Y2-Y3</td><td>Enough to deploy what you build: IAM, S3, Lambda, a VM for n8n. The Cloud Practitioner cert makes it legible to recruiters.</td></tr>
+    <tr><td class="n">12</td><td><b>Make</b></td><td><span class="badge dim">T3</span></td><td class="n">Y2, 1-2 weekends</td><td>Same mental model as n8n with a different skin. Learn enough to translate; clients and employers vary in platform.</td></tr>
+    <tr><td class="n">13</td><td><b>Zapier</b></td><td><span class="badge dim">T3</span></td><td class="n">Y2, 1 weekend</td><td>Simplest of the three; useful for freelance gigs and quick demos. Never your headline skill.</td></tr>
+    <tr><td class="n">14</td><td><b>Project management (Agile/Scrum vocabulary)</b></td><td><span class="badge dim">T3</span></td><td class="n">Y3-Y4</td><td>Lets you run delivery conversations abroad. CAPM is optional polish for employability; it adds zero visa points (old file was wrong).</td></tr>
+    <tr><td class="n">15</td><td><b>Linux CLI + Docker basics</b></td><td><span class="badge dim">T3</span></td><td class="n">Y3</td><td>Needed the day you self-host n8n or deploy an agent for a client. Two focused weeks, learned just-in-time.</td></tr>
+  </table></div>
+
+  <h3>Beginner roadmap · months 1-9</h3>
+  <div class="grid3">
+    <div class="card go"><h4>Learn</h4><p>English exam prep (primary spend) · Excel mastery · SQL fundamentals · Git/GitHub workflow · n8n core nodes · Python syntax → small scripts.</p></div>
+    <div class="card go"><h4>Build</h4><p>Projects 01-03 and 13: documented WATI system, workshop-insight extractor, webinar command centre, Zoom chat parser. Each with a README and one measured number.</p></div>
+    <div class="card go"><h4>Exit test</h4><p>English 7+ banked · 4 public repos · can write a Python script that calls an API and writes to Sheets without a tutorial open.</p></div>
+  </div>
+
+  <h3>Intermediate roadmap · months 10-24</h3>
+  <div class="grid3">
+    <div class="card info"><h4>Learn</h4><p>Python for automation (requests, pandas, error handling, scheduling) · REST/webhooks deeply · AWS Cloud Practitioner · Power BI · Make + Zapier translation · German A1-A2 only if DE route chosen.</p></div>
+    <div class="card info"><h4>Build</h4><p>Projects 04-06, 11, 12, 14: research agent, internal RAG v1, support agent v1, ticket triage, KPI report generator, lead-lifecycle automation. First paid freelance/remote delivery.</p></div>
+    <div class="card info"><h4>Exit test</h4><p>One foreign or external client reference · AWS cert on LinkedIn · you can design a 15-node n8n workflow with retries and logging from a blank canvas.</p></div>
+  </div>
+
+  <h3>Advanced roadmap · months 25-40</h3>
+  <div class="grid3">
+    <div class="card de"><h4>Learn</h4><p>LangGraph/CrewAI agent patterns · MCP servers · vector DBs (Pinecone/pgvector) · RAG evaluation (RAGAS-style) · Docker + a VPS · interview-grade system explanation.</p></div>
+    <div class="card de"><h4>Build</h4><p>Projects 07-10 and 15-20, selectively: production-feel agentic systems, an eval harness, the open-source playbook. Quality over count; six deep beats twelve shallow.</p></div>
+    <div class="card de"><h4>Exit test</h4><p>You can whiteboard a multi-agent customer-ops system, defend its failure modes, and show a public repo where you actually shipped one.</p></div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <p class="eyebrow">Proof of work</p>
+  <h2>20 portfolio projects</h2>
+  <p class="sub">Ordered by year and difficulty. Projects 11-17 formalise work you already do at Be10x, which makes them honest, fast and interview-proof. Every README follows the same skeleton: Problem → What I built → Stack → Outcome with a number → What I would do differently.</p>
+  <div class="proj">
+    <div class="pcard l1"><div class="ph"><h4>WhatsApp Broadcast Automation System</h4><span class="pid">P01 · Y1 · BEGINNER</span></div><p>Turn your WATI work into a documented system: auto-segmentation, scheduled sends, response tagging, audit log in Sheets. You have half-built this already; now make it public.</p><span class="badge dim">WATI</span><span class="badge dim">n8n</span><span class="badge dim">Sheets</span><span class="badge go">Fast win</span></div>
+    <div class="pcard l1"><div class="ph"><h4>Workshop Intelligence Extractor</h4><span class="pid">P02 · Y1 · BEGINNER</span></div><p>Recording in → transcript → structured summary → key insights out. Automates the competitor-workshop analysis you do manually, using Whisper + an LLM.</p><span class="badge dim">Whisper API</span><span class="badge dim">Claude API</span><span class="badge dim">n8n</span><span class="badge go">Directly from your job</span></div>
+    <div class="pcard l1"><div class="ph"><h4>Zoom Chat Intelligence Parser</h4><span class="pid">P03 · Y1 · BEGINNER</span></div><p>Parse Zoom savechat exports into issue categories, unanswered questions and compliance checks (did hosts post the mandatory messages?). Small, real, unmistakably yours.</p><span class="badge dim">Python</span><span class="badge dim">Regex/LLM</span><span class="badge go">Already prototyped at work</span></div>
+    <div class="pcard l2"><div class="ph"><h4>Webinar Operations Command Centre</h4><span class="pid">P04 · Y2 · INTERMEDIATE</span></div><p>n8n workflow handling pre-webinar setup, attendee reminders, live Q&amp;A logging and post-session follow-ups. Replaces the manual Zoom-ops checklist end to end.</p><span class="badge dim">n8n</span><span class="badge dim">Zoom API</span><span class="badge dim">Python</span></div>
+    <div class="pcard l2"><div class="ph"><h4>Competitor Research Automation Agent</h4><span class="pid">P05 · Y2 · INTERMEDIATE</span></div><p>Monitors competitor EdTech sites weekly, extracts course/pricing/marketing changes, ships a digest to Slack or WhatsApp. Scheduled, logged, resilient.</p><span class="badge dim">Python</span><span class="badge dim">n8n</span><span class="badge dim">Firecrawl</span></div>
+    <div class="pcard l2"><div class="ph"><h4>Support Ticket Triage &amp; Disposition Engine</h4><span class="pid">P06 · Y2 · INTERMEDIATE</span></div><p>Classifies inbound tickets, writes a 5-10 word actionable disposition summary for each, routes by department, and tracks resolution. Born from your support-analytics work.</p><span class="badge dim">Claude API</span><span class="badge dim">Sheets/DB</span><span class="badge go">Real ops pain solved</span></div>
+    <div class="pcard l2"><div class="ph"><h4>Weekly Ops KPI Report Generator</h4><span class="pid">P07 · Y2 · INTERMEDIATE</span></div><p>Raw CSV exports in → branded Excel/HTML performance dashboard out, scheduled and emailed. The week-over-week reporting you already produce, productised.</p><span class="badge dim">pandas</span><span class="badge dim">openpyxl</span><span class="badge dim">cron</span></div>
+    <div class="pcard l2"><div class="ph"><h4>Lead Lifecycle Automation</h4><span class="pid">P08 · Y2-3 · INTERMEDIATE</span></div><p>CRM webhook → qualification → WATI nurture sequences → status writeback → audit trail. End-to-end RevOps automation an AU/DE SME would pay for tomorrow.</p><span class="badge dim">CRM API</span><span class="badge dim">n8n</span><span class="badge dim">WATI</span></div>
+    <div class="pcard l3"><div class="ph"><h4>Internal Knowledge-Base RAG System</h4><span class="pid">P09 · Y2-3 · ADVANCED</span></div><p>RAG over SOPs, workshop recordings and docs; answers with citations. Your first serious retrieval system, and the centrepiece of Year 3 interviews.</p><span class="badge dim">LangChain/LlamaIndex</span><span class="badge dim">Pinecone/pgvector</span><span class="badge dim">Python</span></div>
+    <div class="pcard l3"><div class="ph"><h4>Multi-Channel AI Support Agent</h4><span class="pid">P10 · Y3 · ADVANCED</span></div><p>One agent across WhatsApp, email and web chat: answers from the knowledge base, uses tools, escalates cleanly to humans with full context.</p><span class="badge dim">Agents</span><span class="badge dim">MCP</span><span class="badge dim">WATI</span><span class="badge go">Highly marketable abroad</span></div>
+    <div class="pcard l3"><div class="ph"><h4>AI Interview Screener</h4><span class="pid">P11 · Y3 · ADVANCED</span></div><p>Resumes in → weighted-rubric scores, structured summaries and a ranked Excel out. Mirrors the hiring-screen tooling you have built internally; anonymise and publish the pattern.</p><span class="badge dim">Claude API</span><span class="badge dim">pandas</span><span class="badge dim">Excel out</span></div>
+    <div class="pcard l3"><div class="ph"><h4>Meeting → Action-Items Agent</h4><span class="pid">P12 · Y3 · ADVANCED</span></div><p>Transcript in → owners, deadlines and decisions extracted → tasks created in a tracker via API/MCP → summary posted to the channel. The demo that lands in every interview.</p><span class="badge dim">Whisper</span><span class="badge dim">Function calling</span><span class="badge dim">MCP</span></div>
+    <div class="pcard l3"><div class="ph"><h4>Document Intelligence Pipeline</h4><span class="pid">P13 · Y3-4 · ADVANCED</span></div><p>Any PDF/doc in → extraction, classification, structured filing out. Aimed squarely at HR/legal/finance back offices in AU and DE.</p><span class="badge dim">RAG</span><span class="badge dim">LlamaIndex</span><span class="badge dim">Python</span></div>
+    <div class="pcard l3"><div class="ph"><h4>Voice-Note Ops Logger</h4><span class="pid">P14 · Y3 · ADVANCED</span></div><p>Field voice notes → Whisper → entity extraction → CRM/sheet rows. Tiny, delightful, and a perfect freelance product for trades and clinics abroad.</p><span class="badge dim">Whisper</span><span class="badge dim">LLM extraction</span><span class="badge dim">API</span></div>
+    <div class="pcard l4"><div class="ph"><h4>Multi-Agent Research Crew</h4><span class="pid">P15 · Y3-4 · EXPERT</span></div><p>Scout → analyst → writer agents producing a weekly competitor brief with sources. Shows you can orchestrate, not just prompt.</p><span class="badge dim">LangGraph/CrewAI</span><span class="badge dim">Web tools</span></div>
+    <div class="pcard l4"><div class="ph"><h4>Sales Pipeline Automation System</h4><span class="pid">P16 · Y4 · EXPERT</span></div><p>Lead capture → qualification → follow-up sequencing → deal tracking for an SME, with dashboards. Business impact made visible, not just plumbing.</p><span class="badge dim">n8n</span><span class="badge dim">CRM APIs</span><span class="badge dim">Power BI</span></div>
+    <div class="pcard l4"><div class="ph"><h4>RAG Evaluation Harness</h4><span class="pid">P17 · Y4 · EXPERT</span></div><p>Automated answer-quality scoring (faithfulness, relevance, retrieval hit-rate) with dashboards for P09/P10. "I measure AI quality" is the rarest line on this whole page.</p><span class="badge dim">RAGAS-style evals</span><span class="badge dim">Python</span><span class="badge go">Rare signal</span></div>
+    <div class="pcard l4"><div class="ph"><h4>AI Operations Monitoring Dashboard</h4><span class="pid">P18 · Y4 · EXPERT</span></div><p>Watches all running automations: failures, latency, token spend, weekly cost reports. Production-grade thinking, leadership maturity.</p><span class="badge dim">Python</span><span class="badge dim">Streamlit/Grafana</span><span class="badge dim">n8n API</span></div>
+    <div class="pcard l4"><div class="ph"><h4>SME AI-Readiness Audit Toolkit</h4><span class="pid">P19 · Y4-5 · EXPERT</span></div><p>An assessment framework + scoring sheet + auto-generated report for small businesses adopting AI ops. Your consulting calling card in both markets.</p><span class="badge dim">Framework</span><span class="badge dim">Doc generation</span></div>
+    <div class="pcard l4"><div class="ph"><h4>Open-Source AI-Augmented Ops Playbook</h4><span class="pid">P20 · Y5 · EXPERT</span></div><p>Publish the patterns from P01-P19 as a documented, open framework for AI automation in SME operations. A long-tail career asset that keeps working after you land.</p><span class="badge dim">GitHub</span><span class="badge dim">Docs</span><span class="badge go">Career-defining</span></div>
+  </div>
+  <div class="callout info"><b>Publishing rule:</b> everything ships anonymised and rebuilt on dummy data, never on employer data or credentials. The pattern is yours; the production data is not. Say exactly that in each README; it reads as professional judgement, because it is.</div>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+<section id="resources">
+  <p class="eyebrow">Free first, paid only when it buys a certificate or an exam</p>
+  <h2>Learning resources, 2026-fresh</h2>
+  <p class="sub">Each entry carries cost, duration, difficulty, career value and whether the credential is recognised internationally. Search the names; links rot, names persist.</p>
+
+  <h3>English exam · the Year-1 gate</h3>
+  <div class="grid2">
+    <div class="res"><h4>IELTS Liz + IELTS Advantage (YouTube)</h4><p>Former-examiner walkthroughs of Writing Task 1/2, Reading, Listening, Speaking. Your core free curriculum for months 1-4.</p><div class="meta"><span>COST Free</span><span>TIME 3-4 mo</span><span>DIFF Medium</span><span>VALUE Essential</span><span>RECOG n/a</span></div></div>
+    <div class="res"><h4>British Council / IDP official mocks + Cambridge IELTS books 17-19</h4><p>The only practice material that behaves like the real exam. One full timed mock every second Saturday; save the newest book for final rehearsal.</p><div class="meta"><span>COST Free + ₹900-1,300/book</span><span>TIME ongoing</span><span>VALUE Essential</span></div></div>
+    <div class="res"><h4>IELTS Academic exam</h4><p>~₹18,000-18,500 in India (2026); One Skill Retake (~₹12-13K) lets you redo a single band instead of the whole exam. Target 7.0+ each band.</p><div class="meta"><span>COST ₹18-18.5K</span><span>DIFF Medium-hard</span><span>RECOG AU + DE + global</span></div></div>
+    <div class="res"><h4>PTE Academic (the alternative)</h4><p>Accepted by Australian Home Affairs; computer-scored; many Indian candidates reach the Superior band (79+ each, worth +20 points) more reliably on PTE than IELTS 8s. Sit free scored mocks on both, then commit to one.</p><div class="meta"><span>COST ≈ ₹18K</span><span>DIFF Medium</span><span>VALUE +20 pts if Superior</span><span>RECOG AU yes · DE varies, IELTS safer for DE</span></div></div>
+  </div>
+
+  <h3>Data, SQL &amp; analytics</h3>
+  <div class="grid2">
+    <div class="res"><h4>Google Data Analytics (Coursera)</h4><p>SQL, spreadsheets, cleaning, Tableau, a capstone. Audit free; pay (~₹4K/mo) or use Coursera financial aid (high approval for Indian applicants, write a genuine 2-paragraph case) for the certificate.</p><div class="meta"><span>COST Free-₹8K total</span><span>TIME 4-6 mo</span><span>DIFF Easy-medium</span><span>VALUE High</span><span>RECOG Global, HR-known</span></div></div>
+    <div class="res"><h4>Alex the Analyst + Luke Barousse (YouTube)</h4><p>Project-first SQL, Excel, Power BI, Python-for-data, plus portfolio and resume guidance for career-switchers. The free path that actually finishes.</p><div class="meta"><span>COST Free</span><span>TIME ongoing</span><span>VALUE High</span></div></div>
+    <div class="res"><h4>Kaggle Learn + SQLBolt + Mode SQL tutorial</h4><p>Hands-on micro-courses with instant feedback: Python, pandas, SQL, visualisation. Use Kaggle datasets as raw material for portfolio write-ups.</p><div class="meta"><span>COST Free</span><span>TIME 1-3 mo</span><span>DIFF Easy</span><span>VALUE Medium-high</span></div></div>
+    <div class="res"><h4>Microsoft Learn: Power BI path (+ optional PL-300)</h4><p>Official free path from zero to data-model + DAX basics. The PL-300 exam (~₹10K India) is optional polish in Year 2-3, valued in DE's Microsoft-heavy market.</p><div class="meta"><span>COST Free; exam ~₹10K</span><span>TIME 2-3 mo</span><span>VALUE Medium-high</span><span>RECOG Global</span></div></div>
+  </div>
+
+  <h3>Python, automation &amp; APIs</h3>
+  <div class="grid2">
+    <div class="res"><h4>Automate the Boring Stuff (free book) + Corey Schafer (YouTube)</h4><p>The canonical ops-person Python path: files, Sheets, requests, scheduling. Schafer for fundamentals done properly.</p><div class="meta"><span>COST Free</span><span>TIME 3-5 mo</span><span>DIFF Medium</span><span>VALUE Essential</span></div></div>
+    <div class="res"><h4>n8n docs + Nate Herk &amp; Leon van Zyl (YouTube)</h4><p>Official docs are genuinely good; these two channels cover real agentic n8n builds (2025-26 era), not toy demos. Self-host on a ₹400-600/mo VPS in Year 2 to learn deployment.</p><div class="meta"><span>COST Free + small VPS</span><span>TIME ongoing</span><span>VALUE High in AU/DE SMEs</span></div></div>
+    <div class="res"><h4>Postman Learning Center + freeCodeCamp APIs</h4><p>Auth, pagination, webhooks, error handling. The skill that makes every other tool composable.</p><div class="meta"><span>COST Free</span><span>TIME 1-2 mo</span><span>VALUE Essential</span></div></div>
+    <div class="res"><h4>100 Days of Code (Udemy, Angela Yu)</h4><p>The one paid course worth buying if you need structure; buy only during Udemy sales (₹449-699, every 2-3 weeks).</p><div class="meta"><span>COST ₹449-699</span><span>TIME 4-6 mo</span><span>VALUE High if you finish</span></div></div>
+  </div>
+
+  <h3>AI agents &amp; RAG · the Year 2-3 edge</h3>
+  <div class="grid2">
+    <div class="res"><h4>Anthropic Academy (free)</h4><p>Official courses on building with the Claude API, tool use and MCP. You already build with Claude at work; this turns habit into credentialed, current skill.</p><div class="meta"><span>COST Free</span><span>TIME 2-6 wks</span><span>VALUE High</span><span>RECOG Strong 2026 signal</span></div></div>
+    <div class="res"><h4>Hugging Face Agents Course (free, certificate)</h4><p>Free certified course on agent fundamentals, frameworks and evaluation. One of the best free AI credentials of 2025-26.</p><div class="meta"><span>COST Free</span><span>TIME 4-6 wks</span><span>DIFF Medium</span><span>VALUE High</span></div></div>
+    <div class="res"><h4>DeepLearning.AI short courses + LangChain Academy</h4><p>Free, focused 1-3 hour courses: RAG, agents, LangGraph, evaluation. Take one per fortnight in Year 2-3 and implement each in a project the same week.</p><div class="meta"><span>COST Free</span><span>TIME ongoing</span><span>VALUE High</span></div></div>
+    <div class="res"><h4>James Briggs + Sam Witteveen (YouTube) · Pinecone learning centre</h4><p>Deep, current RAG and agent engineering content; Pinecone's free tier is enough for P09/P17.</p><div class="meta"><span>COST Free</span><span>DIFF Medium-hard</span><span>VALUE High</span></div></div>
+  </div>
+
+  <h3>Visa &amp; migration ground truth</h3>
+  <div class="grid2">
+    <div class="res"><h4>immi.homeaffairs.gov.au + SkillSelect</h4><p>Points calculator, fees, occupation lists, invitation-round data. The only Australian source that counts; forums are commentary, this is law.</p><div class="meta"><span>COST Free</span><span>RECOG Official</span></div></div>
+    <div class="res"><h4>make-it-in-germany.com + anabin + ZAB</h4><p>Chancenkarte self-check, degree recognition database, Statement of Comparability ordering. Bookmark all three before any German step.</p><div class="meta"><span>COST Free; ZAB ≈ €208</span><span>RECOG Official</span></div></div>
+    <div class="res"><h4>YouTube ground truth: AU + DE</h4><p>Australia: channels run by MARA-registered agents covering 189/190/491 strategy and round results. Germany: Simple Germany and Bharat in Germany for Chancenkarte and on-ground reality. Cross-check everything against the official sites above.</p><div class="meta"><span>COST Free</span><span>VALUE Orientation, not law</span></div></div>
+    <div class="res"><h4>One paid MARA review session</h4><p>₹10-25K, once, before paying for any skills assessment: confirm occupation code, evidence strategy and list availability. Do not hire end-to-end; do not skip this either.</p><div class="meta"><span>COST ₹10-25K</span><span>VALUE Highest-ROI spend in the plan</span></div></div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section id="certs">
+  <p class="eyebrow">Only credentials with real market or visa value</p>
+  <h2>Certifications, ranked and corrected</h2>
+  <p class="sub">Do these in order. The correction that matters: <b>no professional certification adds Australian visa points.</b> Points come from age, English, qualification, assessed experience, NAATI CCL, nomination and partner status. Certs buy interviews, not points.</p>
+  <div class="tblwrap"><table>
+    <tr><th>#</th><th>Certification</th><th>Cost</th><th>Time</th><th>AU value</th><th>DE value</th><th>Verdict</th></tr>
+    <tr><td class="n">1</td><td><b>IELTS Academic / PTE Academic</b> 7+ each band</td><td class="n">₹18-18.5K</td><td class="n">3-5 mo prep</td><td>Gate + points</td><td>Gate (B2 English proof)</td><td><span class="badge go">Do first, Y1</span></td></tr>
+    <tr><td class="n">2</td><td><b>NAATI CCL · Hindi</b> (community language)</td><td class="n">~AUD 220 (₹12-13K)</td><td class="n">4-8 wks prep</td><td><b>+5 points</b>, valid 3 yrs</td><td>n/a</td><td><span class="badge au">Sit in Y3, before EOI</span></td></tr>
+    <tr><td class="n">3</td><td><b>Google Data Analytics</b> (Coursera)</td><td class="n">Free-₹8K</td><td class="n">4-6 mo</td><td>High</td><td>High</td><td><span class="badge go">Y1</span></td></tr>
+    <tr><td class="n">4</td><td><b>Google AI Essentials</b></td><td class="n">Free-₹3K</td><td class="n">2-3 wks</td><td>Medium</td><td>Medium</td><td><span class="badge go">Y1 quick win</span></td></tr>
+    <tr><td class="n">5</td><td><b>AWS Cloud Practitioner (CLF-C02)</b></td><td class="n">US$100 (~₹8.5K)</td><td class="n">6-10 wks</td><td>High</td><td>High</td><td><span class="badge info">Y2</span></td></tr>
+    <tr><td class="n">6</td><td><b>Hugging Face Agents certificate</b></td><td class="n">Free</td><td class="n">4-6 wks</td><td>High (2026 signal)</td><td>High</td><td><span class="badge info">Y2</span></td></tr>
+    <tr><td class="n">7</td><td><b>Anthropic Academy course badges</b> (Claude API, MCP)</td><td class="n">Free</td><td class="n">2-6 wks</td><td>Medium-high</td><td>Medium-high</td><td><span class="badge info">Y2, you already live here</span></td></tr>
+    <tr><td class="n">8</td><td><b>PL-300 Power BI Data Analyst</b></td><td class="n">~₹10K</td><td class="n">2-3 mo</td><td>Medium</td><td>Medium-high</td><td><span class="badge dim">Y2-3 optional</span></td></tr>
+    <tr><td class="n">9</td><td><b>Goethe / telc German A1→B2</b></td><td class="n">₹12-20K per level (telc often cheaper)</td><td class="n">18-24 mo to B1/B2</td><td>n/a</td><td>Essential for points + market</td><td><span class="badge de">Only if DE route</span></td></tr>
+    <tr><td class="n">10</td><td><b>AZ-900 Azure Fundamentals</b></td><td class="n">~₹5K</td><td class="n">3-4 wks</td><td>Low-medium</td><td>Medium (MS-heavy market)</td><td><span class="badge dim">Optional</span></td></tr>
+    <tr><td class="n">11</td><td><b>CAPM (PMI)</b></td><td class="n">~US$225-300 + membership</td><td class="n">2-3 mo</td><td>Employability only · <b>0 visa points</b></td><td>Low-medium</td><td><span class="badge dim">Y4 polish, skippable</span></td></tr>
+  </table></div>
+  <div class="callout warn"><b>Budget guard-rail:</b> total certification spend across five years should stay under ₹70-90K excluding the English exam and German exams. Anything pitched to you above that (₹1L+ "AI certification programs", "guaranteed placement" courses) is buying their marketing, not your migration. Your portfolio is the expensive-looking asset, and it is nearly free.</div>
+</section>
+
+<!-- ================= GERMAN ================= -->
+<section id="german">
+  <p class="eyebrow">Only if the Germany runway is live</p>
+  <h2>German: A1 → B2 without wrecking the rest of the plan</h2>
+  <p class="sub">Decision rule first: you only start German if, at the end of Year 1, you deliberately choose Germany as an active runway. Every German hour is a portfolio hour spent; for the Australia-primary plan that trade is usually wrong before 2028. If you do start, this is the efficient path.</p>
+
+  <div class="grid4">
+    <div class="card de"><h4>A1 · months 1-4</h4><p>Nicos Weg A1 (DW, free) + Anki top-1000 deck + Duolingo streak as glue. <span class="mono">40 min/day</span>. Exam: Goethe/telc A1 (₹12-16K) only if you need it for paperwork; otherwise self-assess and move on.</p></div>
+    <div class="card de"><h4>A2 · months 4-8</h4><p>Nicos Weg A2 + Deutsch für Euch grammar + first 10-minute self-recordings weekly. <span class="mono">40-50 min/day</span>. Certified A2 optional; B1 is the certificate that matters.</p></div>
+    <div class="card de"><h4>B1 · months 8-15</h4><p>Nicos Weg B1 + Easy German podcast on commute + 1-2 italki sessions/week (₹600-1,200/hr). <b>Sit Goethe or telc B1</b> (₹14-20K): this is the Chancenkarte points level and the PR-accelerator level.</p></div>
+    <div class="card de"><h4>B2 · months 15-24</h4><p>B2 textbook track (Aspekte/Sicher!) + weekly tutoring + German-language job-ad reading as study material. B2 certified opens the 70-80% of the job market that A-levels cannot touch.</p></div>
+  </div>
+
+  <h3>Weekly study template (B-track, ~6 hrs/week)</h3>
+  <div class="grid2">
+    <div class="card"><h4>Mon-Fri</h4>
+      <div class="slot"><span class="t">06:30</span><div><b>25 min · core lesson</b><p>Nicos Weg / textbook unit. One unit fully, never two halves.</p></div></div>
+      <div class="slot"><span class="t">Commute</span><div><b>20-40 min · ears only</b><p>Easy German or DW Langsam gesprochene Nachrichten. Free time converted.</p></div></div>
+      <div class="slot"><span class="t">21:30</span><div><b>10 min · Anki</b><p>Spaced repetition is where vocabulary actually sticks. Non-negotiable, tiny.</p></div></div>
+    </div>
+    <div class="card"><h4>Weekend</h4>
+      <div class="slot"><span class="t">Sat</span><div><b>45-60 min · speaking</b><p>italki session or a 10-minute self-recording reviewed against a transcript.</p></div></div>
+      <div class="slot"><span class="t">Sun</span><div><b>45 min · writing + review</b><p>One short text (email, complaint, description), then review the week's errors.</p></div></div>
+      <div class="slot"><span class="t">Monthly</span><div><b>Progress check</b><p>One past-paper section per month; full mock exam 6 weeks before any booked exam.</p></div></div>
+    </div>
+  </div>
+
+  <h3>Exams and what they unlock</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Level</th><th>Exam (India)</th><th>Cost</th><th>Unlocks</th></tr>
+    <tr><td>A1</td><td>Goethe / telc A1</td><td class="n">₹12-16K</td><td>Chancenkarte language baseline (German route) · 1 point on the grid</td></tr>
+    <tr><td>A2</td><td>Goethe / telc A2</td><td class="n">₹13-17K</td><td>+ points on the Chancenkarte grid; momentum proof</td></tr>
+    <tr><td><b>B1</b></td><td><b>Goethe / telc B1</b></td><td class="n">₹14-20K</td><td><b>The pivot level:</b> stronger Chancenkarte score, Blue Card PR at 21 months instead of 27, basic interview survivability</td></tr>
+    <tr><td>B2</td><td>Goethe / telc / ÖSD B2</td><td class="n">₹16-22K</td><td>The real job market. Most German-speaking ops roles screen here.</td></tr>
+  </table></div>
+  <div class="callout de"><b>English-first loophole, used deliberately:</b> Berlin/Munich startups and English-first companies (the Zalando / HelloFresh / N26 tier and hundreds of smaller ones) hire ops and automation people in English. Your Germany plan can begin with English-only applications under a Chancenkarte while your German climbs from B1 to B2 on the ground. Plan for German; do not wait for it.</div>
+</section>
+
+<!-- ================= JOBS ================= -->
+<section id="jobs">
+  <p class="eyebrow">Converting skills into offers</p>
+  <h2>Target roles, salaries and the four strategies</h2>
+  <p class="sub">Ranked by probability for your specific profile. AU salaries note the sponsorship floor: from <span class="mono">1 Jul 2026</span> any 482-sponsored role must pay at least <span class="mono">AUD 79,499</span>, so sponsored targets effectively start at ~80K.</p>
+
+  <div class="tblwrap"><table>
+    <tr><th>Role</th><th>AU salary</th><th>DE salary</th><th>Sponsor-friendly</th><th>Odds</th><th>Window</th></tr>
+    <tr><td><b>AI Operations Specialist</b> (SME/scale-up)</td><td class="n">$80-100K</td><td class="n">€50-68K</td><td>High</td><td class="n">65%</td><td class="n">2028-30</td></tr>
+    <tr><td><b>Workflow Automation Analyst / Engineer</b></td><td class="n">$80-105K</td><td class="n">€52-70K</td><td>High</td><td class="n">60%</td><td class="n">2028-30</td></tr>
+    <tr><td><b>Digital Operations Coordinator</b> (EdTech/SaaS)</td><td class="n">$70-90K</td><td class="n">€45-58K</td><td>Medium (salary floor risk in AU)</td><td class="n">70%</td><td class="n">2027-29</td></tr>
+    <tr><td><b>Business Automation Consultant</b> (consultancy/freelance)</td><td class="n">$90-120K</td><td class="n">€60-80K</td><td>Medium</td><td class="n">45%</td><td class="n">2029-31</td></tr>
+    <tr><td><b>Knowledge / AI Tools Implementation Specialist</b></td><td class="n">$80-105K</td><td class="n">€55-72K</td><td>High</td><td class="n">55%</td><td class="n">2028-30</td></tr>
+    <tr><td><b>RevOps / CRM Automation Specialist</b></td><td class="n">$85-110K</td><td class="n">€55-75K</td><td>High</td><td class="n">50%</td><td class="n">2028-30</td></tr>
+    <tr><td><b>RAG / LLM Integration Specialist</b></td><td class="n">$100-130K</td><td class="n">€70-90K</td><td>High</td><td class="n">35%</td><td class="n">2029-31</td></tr>
+    <tr><td><b>Customer Operations / Success (SaaS)</b></td><td class="n">$65-85K</td><td class="n">€45-60K</td><td>Lower (often under AU floor)</td><td class="n">75%</td><td class="n">2027-29</td></tr>
+  </table></div>
+  <p class="sub" style="margin-top:6px">Primary LinkedIn headline from 2027: <b>"AI Operations Specialist"</b>. Searchable, internationally understood, accurate. Stop using "Operations Executive" for foreign audiences; it under-translates you.</p>
+
+  <h3>The four strategies</h3>
+  <div class="grid2">
+    <div class="card go"><h4>1 · LinkedIn engine</h4>
+      <ul class="tick go">
+        <li>Headline: role + proof, e.g. "AI Operations Specialist · I build n8n + LLM systems that save ops teams 10+ hrs/week".</li>
+        <li>2 posts/week from Year 2: one build log, one lesson. 200+ posts by Year 4 outranks any resume.</li>
+        <li>Featured section: 3 best projects + the playbook. Comment thoughtfully on AU/DE recruiters' posts for 2 weeks before connecting.</li>
+        <li>Creator mode on; tools tagged (n8n, LangChain, Claude) so search finds you.</li>
+      </ul>
+    </div>
+    <div class="card info"><h4>2 · Resume, per market</h4>
+      <ul class="tick">
+        <li><b>Australia:</b> 2-3 pages is normal; achievement bullets with numbers; no photo, no age, no marital status; spell it "organisation".</li>
+        <li><b>Germany:</b> CV (Lebenslauf) 1-2 pages, clean reverse-chronological; photo now optional, skip it; short tailored cover letter still matters.</li>
+        <li>Every bullet = verb + system + measured outcome. "Built WATI broadcast automation serving 40K contacts, cutting send-prep time 70%."</li>
+        <li>One master resume, then a tailored variant per application. ATS-safe formatting, no tables in the body.</li>
+      </ul>
+    </div>
+    <div class="card au"><h4>3 · Portfolio presentation</h4>
+      <ul class="tick au">
+        <li>GitHub profile README = a landing page: who you help, 6 pinned projects, one architecture diagram, contact.</li>
+        <li>Each repo: Problem → Build → Stack → Outcome-with-number → Next. Screenshots or a 60-second Loom beat paragraphs.</li>
+        <li>One canonical case-study post per flagship project, cross-posted to LinkedIn.</li>
+        <li>Recruiters skim for 90 seconds. Design for the skim; reward the dig.</li>
+      </ul>
+    </div>
+    <div class="card de"><h4>4 · Networking quotas</h4>
+      <ul class="tick de">
+        <li>Y1-2: 8-10/mo Indian expats in AU tech ops (ask about their journey, never for referrals first) · 2-3/mo Indians in DE ops.</li>
+        <li>Y3: 4-5 AU recruiters/mo + 3-4 DE recruiters at English-first companies; warm up via comments first.</li>
+        <li>Y4: 2-3 hiring managers/mo, opened with a relevant project, value first.</li>
+        <li>Boards: Seek, LinkedIn AU, Indeed AU · StepStone, XING, Join.com, EnglishJobs.de, Berlin Startup Jobs, the make-it-in-germany job board.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout go"><b>The referral math that justifies all of this:</b> one warm referral from an AU-based connection converts better than a hundred cold applications. The quotas above produce roughly 150-200 genuine relationships by Year 4; you only need three of them to vouch for you once.</div>
+</section>
+
+<!-- ================= MONEY ================= -->
+<section id="money">
+  <p class="eyebrow">What it actually costs, in 2026 rupees</p>
+  <h2>Financial plan</h2>
+  <p class="sub">FX assumptions: <span class="mono">AUD ≈ ₹58</span>, <span class="mono">EUR ≈ ₹105</span> (mid-2026). Re-check rates before any large transfer; a 5% currency move shifts these totals by ₹1L+. Two routes are costed per country: the cheap one (someone else sponsors) and the self-funded one.</p>
+
+  <h3>🇦🇺 Australia cost sheet</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Item</th><th>Employer-sponsored (482→186)</th><th>Self-funded (190/491)</th></tr>
+    <tr><td>English exam + prep (incl. 1 retake buffer)</td><td class="n">₹20-40K</td><td class="n">₹20-40K</td></tr>
+    <tr><td>Skills assessment (VETASSESS, full + advisory)</td><td class="n">Often skippable*</td><td class="n">₹70-80K</td></tr>
+    <tr><td>NAATI CCL Hindi (+5 points)</td><td class="n">n/a</td><td class="n">₹12-13K</td></tr>
+    <tr><td>MARA agent review session</td><td class="n">₹10-25K</td><td class="n">₹10-25K</td></tr>
+    <tr><td>Visa application charge</td><td class="n">AUD 3,210 ≈ ₹1.9L (often employer-paid)</td><td class="n">AUD 4,910 ≈ ₹2.9L</td></tr>
+    <tr><td>Medicals + PCC + apostilles</td><td class="n">₹15-25K</td><td class="n">₹15-25K</td></tr>
+    <tr><td>Certifications (Years 1-4 total)</td><td class="n">₹70-90K</td><td class="n">₹70-90K</td></tr>
+    <tr><td>Flight + first 3 months living</td><td class="n">AUD 8-12K ≈ ₹4.6-7L</td><td class="n">AUD 8-12K ≈ ₹4.6-7L</td></tr>
+    <tr><td>Emergency buffer (untouchable)</td><td class="n">₹3-5L</td><td class="n">₹3-5L</td></tr>
+    <tr><td><b>Total corpus needed</b></td><td class="n"><b>₹9-14L</b></td><td class="n"><b>₹18-25L</b></td></tr>
+  </table></div>
+  <p class="sub" style="margin-top:6px">*If a 482 employer sponsors you, the skills-assessment requirement depends on occupation and your passport; many Core Skills nominations for Indian nationals still need one, so keep ₹70-80K earmarked until a MARA agent confirms otherwise.</p>
+
+  <h3>🇩🇪 Germany cost sheet (Chancenkarte route)</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Item</th><th>Amount</th><th>Note</th></tr>
+    <tr><td>Blocked account (Sperrkonto)</td><td class="n">€13,092 ≈ ₹13.7-14L</td><td><b>Not a fee.</b> This is your own living money, paid back to you at ~€1,091/month while you job-hunt. It must exist upfront, but you spend it on yourself.</td></tr>
+    <tr><td>ZAB Statement of Comparability</td><td class="n">€208 ≈ ₹22K</td><td>Degree recognition; order in Year 2, processing takes months</td></tr>
+    <tr><td>German exams (A1→B1/B2 path)</td><td class="n">₹40-60K total</td><td>Goethe or telc, 2-3 certified levels</td></tr>
+    <tr><td>Visa fee + health insurance (incoming cover, ~6 mo)</td><td class="n">€75 + €400-700 ≈ ₹50-80K</td><td>Insurance must meet BAMF "incoming" standards</td></tr>
+    <tr><td>Flight + setup (deposit, registration, transit)</td><td class="n">₹1-1.5L</td><td>German rental deposits are 2-3 cold months</td></tr>
+    <tr><td>Emergency buffer (beyond blocked account)</td><td class="n">₹2-3L</td><td>For the bad-case month 10-12 scenario</td></tr>
+    <tr><td><b>Liquid corpus needed</b></td><td class="n"><b>₹17-20L</b></td><td>of which ~₹14L returns to you as monthly living money</td></tr>
+  </table></div>
+
+  <h3>The savings ladder</h3>
+  <div class="years">
+    <div class="yr"><span class="y">Y1 · 2026-27</span><b class="mono">₹2-3L</b><p>₹8-15K/month auto-transfer + exam costs absorbed. Separate named account, opened in Month 1.</p></div>
+    <div class="yr"><span class="y">Y2 · 2027-28</span><b class="mono">₹5-8L total</b><p>Salary growth + first freelance income. Certs paid from a separate ₹2K/month skills budget.</p></div>
+    <div class="yr"><span class="y">Y3 · 2028-29</span><b class="mono">₹10-14L total</b><p>Assessment + NAATI + agent fees paid this year (~₹1L). Freelance should now add ₹5-15K/month.</p></div>
+    <div class="yr"><span class="y">Y4 · 2029-30</span><b class="mono">₹16-20L total</b><p>Visa charge paid on lodgement. Corpus is now untouchable for anything except the move.</p></div>
+    <div class="yr"><span class="y">Y5 · 2030-31</span><b class="mono">₹20-26L deployed</b><p>Flights, landing costs, first-quarter living. Emergency fund stays in India, intact.</p></div>
+  </div>
+
+  <div class="callout info"><b>Emergency fund rule:</b> keep 6 months of Indian living expenses (₹1.5-3L for most single people) in a separate liquid account that is <i>not</i> the migration corpus and is never counted in the ladder above. If the migration fund and the emergency fund are the same money, one family medical event resets the whole plan by two years.</div>
+
+  <h3>Return on investment, plainly</h3>
+  <div class="grid2">
+    <div class="card au"><h4>Australia case</h4><p>AI Operations Specialist at <span class="mono">AUD 85K</span> ≈ <span class="mono">₹49L</span> gross ≈ <span class="mono">AUD ~66K</span> after tax ≈ <span class="mono">₹38L</span>. Even after Sydney/Melbourne living costs, realistic savings run <span class="mono">AUD 15-25K/yr</span> (₹9-14L). A ₹20-25L self-funded investment pays back in under 18 months of the income differential; an employer-sponsored route pays back in under a year.</p></div>
+    <div class="card de"><h4>Germany case</h4><p>Automation/Ops role at <span class="mono">€55K</span> ≈ <span class="mono">₹58L</span> gross ≈ <span class="mono">€34-36K</span> net ≈ <span class="mono">₹36-38L</span>. Berlin living costs leave <span class="mono">€8-15K/yr</span> savings potential. The blocked account returns to you as living money, so true sunk cost is ~₹3-4L. Slower salary curve than AU, faster EU mobility upside.</p></div>
+  </div>
+</section>
+
+<!-- ================= DAILY ================= -->
+<section id="daily">
+  <p class="eyebrow">The plan is the calendar</p>
+  <h2>How each day runs</h2>
+  <p class="sub">Built around a full-time job. No heroics, no 4 AM fantasy schedules. Morning gets the hard skill because your brain is freshest; evening gets video-based learning because it survives tiredness. The commute is free study time, claimed.</p>
+
+  <h3>Year 1 · 90 min/day · English + data foundations</h3>
+  <div class="grid2">
+    <div class="card"><h4>Weekdays</h4>
+      <div class="slot"><span class="t">06:30</span><div><b>English exam practice · 30 min</b><p>Mon Writing T2 · Tue Reading · Wed Listening · Thu Speaking (record yourself) · Fri Writing T1.</p></div></div>
+      <div class="slot"><span class="t">Commute</span><div><b>IELTS Liz / listening tests</b><p>Audio only. Zero extra time cost, 30-60 min of passive band points.</p></div></div>
+      <div class="slot"><span class="t">09-18</span><div><b>Work at Be10x</b><p>Document every tool you build the day you build it. Your job is also your portfolio factory.</p></div></div>
+      <div class="slot"><span class="t">20:30</span><div><b>Google Data Analytics · 60 min</b><p>One lesson, every quiz, no skipping ahead. Then SQL practice once the course ends.</p></div></div>
+    </div>
+    <div class="card"><h4>Weekends</h4>
+      <div class="slot"><span class="t">Sat 09:00</span><div><b>Full mock test (alternate Saturdays) · 2.5 h</b><p>Timed, honest scoring. Off-weeks: review and self-grade the week's writing.</p></div></div>
+      <div class="slot"><span class="t">Sat 12:00</span><div><b>GitHub · 1-1.5 h</b><p>Document one tool: Problem → Build → Outcome. One README per weekend compounds into a portfolio.</p></div></div>
+      <div class="slot"><span class="t">Sun 10:00</span><div><b>Project work · 1.5 h</b><p>Build the quarter's project (P01-P03). Ship small, ship weekly.</p></div></div>
+      <div class="slot"><span class="t">Sun 12:00</span><div><b>Visa research · 30 min max</b><p>One video or one official page. Informed, not obsessed; visas wait until the English score exists.</p></div></div>
+    </div>
+  </div>
+
+  <h3>Year 2 · 100 min/day · skills + identity</h3>
+  <div class="grid2">
+    <div class="card"><h4>Weekdays</h4>
+      <div class="slot"><span class="t">06:30</span><div><b>Track A or B · 40 min</b><p>AU-primary: Python/cert study. DE-active: German lesson instead. One track only; never both in one session.</p></div></div>
+      <div class="slot"><span class="t">Commute</span><div><b>Audio for the same track</b><p>German podcast or tech/cloud audio summaries.</p></div></div>
+      <div class="slot"><span class="t">20:30</span><div><b>Build time · 60 min</b><p>Python, n8n workflows, project of the quarter (P04-P08). Code beats courses from here on.</p></div></div>
+      <div class="slot"><span class="t">21:30</span><div><b>LinkedIn · 10 min, Tue + Thu only</b><p>Post what you built or learned. Small effort, compounding visibility.</p></div></div>
+    </div>
+    <div class="card"><h4>Weekends</h4>
+      <div class="slot"><span class="t">Sat 09:00</span><div><b>Mock or milestone · 2 h</b><p>Cert practice exam, German speaking recording, or a project sprint to finish the week's feature.</p></div></div>
+      <div class="slot"><span class="t">Sat 11:00</span><div><b>Portfolio · 1.5 h</b><p>New project or upgrade an old README with numbers and screenshots.</p></div></div>
+      <div class="slot"><span class="t">Sun 10:00</span><div><b>Paperwork groundwork · 1 h</b><p>One document per weekend: experience letters, payslips archive, degree apostille research, anabin check.</p></div></div>
+      <div class="slot"><span class="t">Sun 11:00</span><div><b>Freelance pipeline · 1 h</b><p>One proposal or one delivery hour. The foreign reference matters more than the fee.</p></div></div>
+    </div>
+  </div>
+
+  <h3>Year 3+ · 60 min/day · execution mode</h3>
+  <div class="grid2">
+    <div class="card"><h4>Weekdays</h4>
+      <div class="slot"><span class="t">06:30</span><div><b>Applications + outreach · 30 min</b><p>2 tailored applications or 1 personalised connection to an AU/DE professional. Every single weekday.</p></div></div>
+      <div class="slot"><span class="t">20:30</span><div><b>Alternating block · 30 min</b><p>Visa checklist item one day, two spoken interview answers the next. Out loud, timed.</p></div></div>
+      <div class="slot"><span class="t">21:00</span><div><b>German maintenance · 20 min (DE route only)</b><p>Anki + one audio episode. Losing B1 now would waste two years of mornings.</p></div></div>
+    </div>
+    <div class="card"><h4>Weekends</h4>
+      <div class="slot"><span class="t">Sat 09:00</span><div><b>Deep job-hunt session · 2 h</b><p>Research 5 target companies, send 3 strong tailored applications. Quality over spray.</p></div></div>
+      <div class="slot"><span class="t">Sat 11:00</span><div><b>Visa admin · 1 h</b><p>One checklist section per weekend; the application finishes itself in 8-10 weeks.</p></div></div>
+      <div class="slot"><span class="t">Sun 10:00</span><div><b>Portfolio + LinkedIn · 1 h</b><p>Keep shipping in public. Recruiters check recency before they check depth.</p></div></div>
+    </div>
+  </div>
+
+  <h3>Six golden rules</h3>
+  <div class="grid3">
+    <div class="card"><h4>1 · Morning = hard skill</h4><p>Retention is highest before work. IELTS writing and German grammar live at 6:30, video lectures live at night.</p></div>
+    <div class="card"><h4>2 · Never skip the morning</h4><p>On bad days, do only the 30-minute morning block. Daily 30 beats weekend 180, every time, forever.</p></div>
+    <div class="card"><h4>3 · One subject per session</h4><p>Never split a block between two subjects. Context switching is where retention goes to die.</p></div>
+    <div class="card"><h4>4 · Mock every two weeks</h4><p>English: full timed test. Data: mini project. German: 10-minute recording. Measured, not felt.</p></div>
+    <div class="card"><h4>5 · Log every day</h4><p>One line: what, how long, one thing learned. In a year this log is your discipline evidence and your story.</p></div>
+    <div class="card"><h4>6 · Commute = ears</h4><p>Listening practice or language audio, every commute. It is 150+ free hours a year; claim them.</p></div>
+  </div>
+</section>
+
+<!-- ================= PLAN ================= -->
+<section id="plan">
+  <p class="eyebrow">Execution only, no motivation</p>
+  <h2>Master action plan</h2>
+  <p class="sub">Three zoom levels: the next 90 days in detail, the next 12 months by name, and the five years as committed milestones. Anchored to a June 2026 start; shift month labels if you begin later, never shift the sequence.</p>
+
+  <h3>The first 90 days</h3>
+  <div class="grid3">
+    <div class="card go"><h4>Month 1 · Foundation</h4>
+      <ul class="tick go">
+        <li>Public GitHub profile created, professionally named, profile README drafted.</li>
+        <li>Project 01 (WATI broadcast system) documented and pushed. First public artifact.</li>
+        <li>English exam decided (IELTS vs PTE via free mocks), prep enrolled, exam tentatively booked for Month 4-5.</li>
+        <li>LinkedIn headline updated; banner added; first post published.</li>
+        <li>Migration savings account opened, auto-transfer of ₹8-15K live.</li>
+        <li>Google Data Analytics started (audit or financial aid applied).</li>
+      </ul>
+    </div>
+    <div class="card go"><h4>Month 2 · Build publicly</h4>
+      <ul class="tick go">
+        <li>Project 02 (Workshop Intelligence Extractor) started; Whisper + Claude pipeline working end to end.</li>
+        <li>First build-log LinkedIn post with screenshots: what it saves, in hours.</li>
+        <li>30 personalised connections: India-based AI ops people + 5 Indian expats in AU.</li>
+        <li>n8n running (cloud free tier or local); first three workflows rebuilt in it.</li>
+        <li>One full English mock test, honestly scored; weak sections identified.</li>
+      </ul>
+    </div>
+    <div class="card go"><h4>Month 3 · Deepen + verify</h4>
+      <ul class="tick go">
+        <li>Project 02 shipped with README and numbers; Project 03 (Zoom chat parser) started.</li>
+        <li>Google AI Essentials completed and added to LinkedIn.</li>
+        <li>Official AU points calculator run once with honest inputs; result noted, then parked.</li>
+        <li>10 more expat connections; 2 actual conversations held.</li>
+        <li>Second full mock; band trajectory confirmed or exam date adjusted.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The next 12 months, by name</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Month</th><th>Focus</th><th>Ship by month-end</th></tr>
+    <tr><td class="n">Jun 2026</td><td>Setup month (Month 1 above)</td><td>GitHub live · P01 public · savings auto-transfer on</td></tr>
+    <tr><td class="n">Jul 2026</td><td>Build + mock (Month 2 above)</td><td>P02 pipeline working · first build-log post</td></tr>
+    <tr><td class="n">Aug 2026</td><td>Deepen + verify (Month 3 above)</td><td>P02 shipped · AI Essentials cert · mock #2</td></tr>
+    <tr><td class="n">Sep 2026</td><td>English peak prep</td><td>P03 shipped · daily writing corrections · mock #3-4</td></tr>
+    <tr><td class="n">Oct 2026</td><td><b>English exam</b></td><td>Sit IELTS/PTE · target 7+ each band · book One Skill Retake only if one band missed</td></tr>
+    <tr><td class="n">Nov 2026</td><td>Result + pivot to data</td><td>Score banked · Data Analytics cert finished · SQL daily reps begin</td></tr>
+    <tr><td class="n">Dec 2026</td><td>Python ramp</td><td>Automate the Boring Stuff ch. 1-9 · first API script · Year-1 finance review (₹1.2-1.8L saved?)</td></tr>
+    <tr><td class="n">Jan 2027</td><td>Python + portfolio</td><td>P04 (Webinar Command Centre) started · 150+ connections</td></tr>
+    <tr><td class="n">Feb 2027</td><td>Ship P04</td><td>P04 live with README · LinkedIn 2 posts/week habit locked</td></tr>
+    <tr><td class="n">Mar 2027</td><td>Freelance opener</td><td>First paid or pro-bono external automation delivered · testimonial captured</td></tr>
+    <tr><td class="n">Apr 2027</td><td>Cloud start</td><td>AWS Cloud Practitioner study begun · P05 (research agent) started</td></tr>
+    <tr><td class="n">May 2027</td><td>Year-1 close</td><td>4-5 public projects · English 7+ banked · ₹2-3L saved · decision recorded: is the Germany runway live? (German starts only if yes)</td></tr>
+  </table></div>
+
+  <h3>Years 1-5, as commitments</h3>
+  <div class="years">
+    <div class="yr"><span class="y">Y1 · 2026-27</span><b>Foundation</b><p>English 7+ each band · 4-5 documented projects · Google Data Analytics + AI Essentials · 150+ relevant connections · ₹2-3L saved · DE go/no-go decision recorded.</p></div>
+    <div class="yr"><span class="y">Y2 · 2027-28</span><b>Technical identity</b><p>Python functional in 3+ projects · AWS CCP passed · HF Agents cert · first foreign client reference · headline becomes "AI Operations Specialist" · German A2-B1 if DE live · ₹5-8L total.</p></div>
+    <div class="yr"><span class="y">Y3 · 2028-29</span><b>Deep tech + paperwork</b><p>RAG system + support agent live (P09, P10) · MARA session done · VETASSESS lodged and received · NAATI CCL passed (+5) · EOI submitted if points competitive · 500+ network, 50+ AU-based · ₹10-14L total.</p></div>
+    <div class="yr"><span class="y">Y4 · 2029-30</span><b>Market entry</b><p>8+ public projects incl. eval harness · AU-format resume reviewed by an AU professional · 5+ real interviews · target outcome: 482 job offer or 190/491 invitation · ₹16-20L total.</p></div>
+    <div class="yr"><span class="y">Y5 · 2030-31</span><b>Migration</b><p>Visa lodged and granted · relocation executed · first 90 days abroad: bank, tax number, healthcare, perform hard in the first role · PR clock running (186 after 2 yrs on 482, or already PR on 190) · P20 playbook published.</p></div>
+  </div>
+
+  <div class="callout warn"><b>The quarterly review ritual (non-negotiable):</b> every 13 weeks, open this page, the checklist tab, and your log. Answer three questions in writing: What shipped? What slipped, and why? What changes next quarter? A 5-year plan survives only if it is re-decided twenty times.</div>
+</section>
+
+<!-- ================= CHECKLIST ================= -->
+<section id="checklist">
+  <p class="eyebrow">Saved on this device · feeds the progress bar above</p>
+  <h2>Execution checklist</h2>
+  <p class="sub">Ticks persist in this browser via localStorage, so progress survives closing the tab. They do not sync across devices; use one primary device or mirror milestones in your daily log. Month labels assume a June 2026 start.</p>
+  <p><button class="btn ghost" id="ckReset">Reset all progress</button></p>
+
+  <div class="ckgroup">
+    <div class="ckhead"><h3 style="margin:0">Shared foundation · both runways</h3><span class="cnt"></span></div>
+    <label class="ck"><input type="checkbox" data-ck="sh-01"><span class="tx"><b>Public GitHub profile live with a professional README</b><span>Month 1</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-02"><span class="tx"><b>Project 01 (WATI broadcast system) documented and public</b><span>Month 1</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-03"><span class="tx"><b>Migration savings account opened, ₹8-15K auto-transfer running</b><span>Month 1</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-04"><span class="tx"><b>LinkedIn headline + banner updated; first post published</b><span>Month 1</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-05"><span class="tx"><b>English exam chosen (IELTS vs PTE) after one free scored mock of each</b><span>Month 1-2</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-06"><span class="tx"><b>English exam sat · 7+ each band banked</b><span>Month 4-5</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-07"><span class="tx"><b>Google AI Essentials completed and on LinkedIn</b><span>Month 3</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-08"><span class="tx"><b>Google Data Analytics completed (audit or financial aid)</b><span>Month 6</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-09"><span class="tx"><b>150+ relevant connections, including 20+ AU/DE-based expats</b><span>Month 12</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-10"><span class="tx"><b>First external/freelance automation delivered; testimonial captured</b><span>Month 9-12</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-11"><span class="tx"><b>Experience letters + salary certificates archived as PDFs</b><span>Month 12-15</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="sh-12"><span class="tx"><b>Germany go/no-go decision recorded in writing (German starts only if go)</b><span>Month 12</span></span></label>
+  </div>
+
+  <div class="ckgroup">
+    <div class="ckhead"><h3 style="margin:0">🇦🇺 Australia track</h3><span class="cnt"></span></div>
+    <label class="ck"><input type="checkbox" data-ck="au-01"><span class="tx"><b>Official points calculator run with honest inputs; score noted</b><span>Month 2</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-02"><span class="tx"><b>Occupation codes shortlisted: 224712 / 224711 / 261111 (stretch)</b><span>Month 3</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-03"><span class="tx"><b>Following invitation-round results + 2 MARA-run channels</b><span>Month 2</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-04"><span class="tx"><b>Paid MARA review session done: code, evidence strategy, list reality</b><span>Month 14-16</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-05"><span class="tx"><b>Assessing body confirmed (VETASSESS/ACS) + evidence checklist built</b><span>Month 16</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-06"><span class="tx"><b>Skills assessment lodged</b><span>Month 18-20</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-07"><span class="tx"><b>Positive skills assessment received</b><span>Month 22-26</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-08"><span class="tx"><b>NAATI CCL Hindi passed (+5 points, valid 3 years)</b><span>Month 24-30</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-09"><span class="tx"><b>Superior English attempt made if score model needs +20 (PTE 79+ / IELTS 8)</b><span>Month 24-30</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-10"><span class="tx"><b>Three live state lists shortlisted; nomination criteria tracked</b><span>Month 24</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-11"><span class="tx"><b>EOI submitted in SkillSelect (190 + 491 selected)</b><span>Month 26-32</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-12"><span class="tx"><b>482 sponsor pipeline: 20 target companies listed, 5 contacted warm</b><span>Month 30+</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-13"><span class="tx"><b>Invitation or job offer received; responded within the 60-day window</b><span>Window</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-14"><span class="tx"><b>Visa lodged (190/491 AUD 4,910 · 482 AUD 3,210)</b><span>Window</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-15"><span class="tx"><b>Medicals + police clearance completed</b><span>During application</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-16"><span class="tx"><b>Visa granted · activation/relocation flight booked</b><span>Year 4-5</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-17"><span class="tx"><b>Landed: TFN in week 1, bank account, Medicare (if eligible), SIM</b><span>First weeks</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="au-18"><span class="tx"><b>PR clock managed: 186 nomination at 2 years (482 route) or residency obligations met (190/491)</b><span>Year 5+</span></span></label>
+  </div>
+
+  <div class="ckgroup">
+    <div class="ckhead"><h3 style="margin:0">🇩🇪 Germany track · only if runway is live</h3><span class="cnt"></span></div>
+    <label class="ck"><input type="checkbox" data-ck="de-01"><span class="tx"><b>anabin checked: university H+ and degree entry confirmed</b><span>Month 12</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-02"><span class="tx"><b>Chancenkarte self-check on make-it-in-germany: 6+ points confirmed</b><span>Month 13</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-03"><span class="tx"><b>German A1 completed (Nicos Weg + Anki)</b><span>Month 16</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-04"><span class="tx"><b>ZAB Statement of Comparability ordered (≈ €208)</b><span>Month 18</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-05"><span class="tx"><b>A2 reached; B1 track running with weekly speaking practice</b><span>Month 20-24</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-06"><span class="tx"><b>Goethe/telc B1 passed</b><span>Month 26-30</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-07"><span class="tx"><b>Blocked-account provider chosen; funding plan written (€13,092)</b><span>Month 28</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-08"><span class="tx"><b>6 months of clean bank statements archived</b><span>Month 30</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-09"><span class="tx"><b>German-format CV (Lebenslauf) ready; cover-letter template written</b><span>Month 28</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-10"><span class="tx"><b>Remote applications live: StepStone, XING, LinkedIn DE, EnglishJobs.de</b><span>Month 28+</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-11"><span class="tx"><b>Consulate/VFS appointment booked early (6-8 week waits are normal)</b><span>Window</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-12"><span class="tx"><b>Blocked account funded · incoming health insurance bought</b><span>Before visa</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-13"><span class="tx"><b>Chancenkarte application lodged (€75) with motivation letter</b><span>Window</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-14"><span class="tx"><b>Arrived: Anmeldung within 2 weeks, German bank account, SIM</b><span>Week 1-2</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-15"><span class="tx"><b>Job secured → converted to Skilled Worker visa (§18a/b) or Blue Card</b><span>Within 12 months</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-16"><span class="tx"><b>German B2 passed on the ground</b><span>Year 5</span></span></label>
+    <label class="ck"><input type="checkbox" data-ck="de-17"><span class="tx"><b>PR path tracked: ~3 yrs Skilled Worker (or 27/21 months Blue Card)</b><span>Year 5+</span></span></label>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Sources and verification.</b> Figures on this page were verified in June 2026 against official and specialist sources: immi.homeaffairs.gov.au (points, fees, CSOL), Home Affairs CSIT/SSIT indexation (AUD 79,499 / 146,717 from 1 Jul 2026), make-it-in-germany.com and BMI thresholds (Blue Card €50,700 / €45,934.20; Chancenkarte €1,091/month), anabin.kmk.org and ZAB for recognition. Thresholds index every year; re-verify before any payment or lodgement.</div>
+    <div><b>Not legal advice.</b> This is a planning document. For occupation selection, evidence strategy and lodgement, use one paid session with a MARA-registered agent (Australia) or a German immigration adviser at the decision points marked in the plan.</div>
+    <div class="mono">Built June 2026 · single-file · works offline once loaded · progress stored in your browser only · push to GitHub → Settings → Pages to host</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var LS_TAB="roadmap-tab-v1", LS_CK="roadmap-checks-v1";
+
+  /* ---------- tabs ---------- */
+  var tabs=[].slice.call(document.querySelectorAll(".tab"));
+  var secs=[].slice.call(document.querySelectorAll("main > section"));
+  function show(id,push){
+    var ok=secs.some(function(s){return s.id===id});
+    if(!ok) id="overview";
+    secs.forEach(function(s){s.classList.toggle("on",s.id===id)});
+    tabs.forEach(function(t){t.classList.toggle("on",t.dataset.t===id)});
+    try{localStorage.setItem(LS_TAB,id)}catch(e){}
+    if(push){ if(history.replaceState) history.replaceState(null,"","#"+id); }
+    var active=document.querySelector(".tab.on");
+    if(active&&active.scrollIntoView) active.scrollIntoView({block:"nearest",inline:"center"});
+  }
+  tabs.forEach(function(t){t.addEventListener("click",function(){show(t.dataset.t,true);window.scrollTo({top:0})})});
+  window.addEventListener("hashchange",function(){show(location.hash.replace("#",""),false)});
+  var start=location.hash?location.hash.replace("#",""):null;
+  if(!start){try{start=localStorage.getItem(LS_TAB)}catch(e){}}
+  show(start||"overview",false);
+
+  /* ---------- checklist persistence ---------- */
+  var boxes=[].slice.call(document.querySelectorAll("input[data-ck]"));
+  var state={};
+  try{state=JSON.parse(localStorage.getItem(LS_CK)||"{}")||{}}catch(e){state={}}
+  function save(){try{localStorage.setItem(LS_CK,JSON.stringify(state))}catch(e){}}
+  function paint(){
+    boxes.forEach(function(b){
+      var on=!!state[b.dataset.ck];
+      b.checked=on;
+      b.closest(".ck").classList.toggle("done",on);
+    });
+    document.querySelectorAll(".ckgroup").forEach(function(g){
+      var bs=[].slice.call(g.querySelectorAll("input[data-ck]"));
+      var done=bs.filter(function(b){return b.checked}).length;
+      var c=g.querySelector(".cnt");
+      if(c) c.textContent=done+" / "+bs.length+" done";
+    });
+    var total=boxes.length, done=boxes.filter(function(b){return b.checked}).length;
+    var pct=total?Math.round(done*100/total):0;
+    var fill=document.getElementById("navbar-fill");
+    var lab=document.getElementById("navbar-pct");
+    if(fill) fill.style.width=pct+"%";
+    if(lab) lab.textContent=pct+"% executed";
+  }
+  boxes.forEach(function(b){
+    b.addEventListener("change",function(){
+      state[b.dataset.ck]=b.checked;
+      if(!b.checked) delete state[b.dataset.ck];
+      save(); paint();
+    });
+  });
+  var reset=document.getElementById("ckReset");
+  if(reset) reset.addEventListener("click",function(){
+    if(confirm("Reset all checklist progress on this device?")){state={};save();paint();}
+  });
+  paint();
+
+  /* ---------- departure board status ---------- */
+  var el=document.getElementById("boardStatus");
+  if(el){
+    var startDate=new Date(2026,5,1); /* Jun 2026 */
+    var now=new Date();
+    var months=(now.getFullYear()-startDate.getFullYear())*12+(now.getMonth()-startDate.getMonth());
+    var yr=Math.floor(Math.max(0,months)/12)+1;
+    if(yr<1) yr=1;
+    el.textContent = yr>5 ? "ARRIVED · PLAN COMPLETE" : "BOARDING · YEAR "+yr;
+  }
+})();
+</script>
+</body>
+</html>
