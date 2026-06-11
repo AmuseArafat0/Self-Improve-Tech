@@ -543,464 +543,96 @@ footer .wrap{display:grid;gap:8px}
 
 <!-- ================= RESOURCES ================= -->
 <section id="resources">
-  <p class="eyebrow">Year-by-year · free first, paid only when it buys a certificate</p>
-  <h2>Learning resources, 2026-fresh</h2>
-  <p class="sub">Resources are now organised by the year you use them. Each block shows what to study that year, the daily habit that makes it stick, and direct links to every study material. Free-first philosophy: audit before paying, pay only for credentials that move visa points or interviews.</p>
+  <p class="eyebrow">Free first, paid only when it buys a certificate or an exam</p>
+  <h2>Learning resources, year by year</h2>
+  <p class="sub">Same vetted resources, now sequenced. <b>Rule of use: open only your current year.</b> Everything below it is finished; everything above it is noise until its date arrives. Each year starts with a "your day" card that maps every daily slot to its exact study material, then lists that year's resources with cost, time, value and a direct link (opens in a new tab). If a link ever rots, search the name; names persist. Pairs with the Daily Plan tab.</p>
 
-  <!-- YEAR SWITCHER -->
-  <style>
-    .yr-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:22px 0 0}
-    .yr-tab{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.08em;padding:7px 16px;border-radius:999px;border:1.5px solid var(--line2);background:var(--bg2);color:var(--ink2);cursor:pointer;transition:all .18s}
-    .yr-tab:hover{background:var(--bg3);color:var(--ink)}
-    .yr-tab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-    .yr-tab.y1.active{background:var(--go);border-color:var(--go);color:#fff}
-    .yr-tab.y2.active{background:var(--info);border-color:var(--info);color:#fff}
-    .yr-tab.y3.active{background:var(--au-strong);border-color:var(--au-strong);color:#fff}
-    .yr-tab.y4.active{background:var(--de-strong);border-color:var(--de-strong);color:#fff}
-    .yr-tab.y5.active{background:#6B4EAA;border-color:#6B4EAA;color:#fff}
-    .yr-pane{display:none}
-    .yr-pane.active{display:block;animation:fade .22s ease}
-    .daily-block{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);padding:18px 20px;margin:18px 0}
-    .daily-block h4{font-family:var(--disp);font-size:15px;font-weight:700;margin-bottom:12px}
-    .daily-row{display:grid;grid-template-columns:90px 1fr;gap:10px 14px;align-items:start;padding:8px 0;border-bottom:1px dashed var(--line)}
-    .daily-row:last-child{border-bottom:none}
-    .daily-time{font-family:var(--mono);font-size:11.5px;color:var(--ink3);padding-top:3px}
-    .daily-act b{font-family:var(--disp);font-size:13.5px;display:block;margin-bottom:2px}
-    .daily-act p{font-size:12.8px;color:var(--ink2);margin:0}
-    .daily-act .links{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
-    .yr-label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;border-radius:999px;display:inline-block;margin-bottom:14px}
-    .yr-label.y1{background:var(--go-bg);color:var(--go)}
-    .yr-label.y2{background:var(--info-bg);color:var(--info)}
-    .yr-label.y3{background:var(--au-bg);color:var(--au-strong)}
-    .yr-label.y4{background:var(--de-bg);color:var(--de-strong)}
-    .yr-label.y5{background:#EDE8F8;color:#6B4EAA}
-    @media(prefers-color-scheme:dark){
-      .yr-label.y5{background:#2A1F42;color:#A98FD8}
-    }
-    .focus-pill{display:inline-block;font-family:var(--mono);font-size:11px;padding:2px 9px;border-radius:999px;border:1px solid currentColor;margin:2px 4px 2px 0;opacity:.85}
-  </style>
-
-  <div class="yr-tabs">
-    <button class="yr-tab y1 active" onclick="showYear('y1',this)">Year 1 · 2026-27</button>
-    <button class="yr-tab y2" onclick="showYear('y2',this)">Year 2 · 2027-28</button>
-    <button class="yr-tab y3" onclick="showYear('y3',this)">Year 3 · 2028-29</button>
-    <button class="yr-tab y4" onclick="showYear('y4',this)">Year 4 · 2029-30</button>
-    <button class="yr-tab y5" onclick="showYear('y5',this)">Year 5 · 2030-31</button>
+  <div class="years">
+    <div class="yr"><span class="y">YEAR 1 · 2026-27</span><b>English + data</b><p>IELTS/PTE 7+, Google Data Analytics, Excel, SQL, Git, n8n core, Python syntax · 4 repos</p></div>
+    <div class="yr"><span class="y">YEAR 2 · 2027-28</span><b>Build identity</b><p>Python deep, APIs, AWS CCP, Power BI, HF Agents, Anthropic Academy · German A1-A2 if DE</p></div>
+    <div class="yr"><span class="y">YEAR 3 · 2028-29</span><b>Agents + visa</b><p>RAG, MCP, evals, Docker · NAATI CCL, VETASSESS, EOI groundwork · German B1 if DE</p></div>
+    <div class="yr"><span class="y">YEAR 4 · 2029-30</span><b>Offers</b><p>Boards daily, referrals cashed, interviews, visa lodged · CAPM only if a JD asks</p></div>
+    <div class="yr"><span class="y">YEAR 5 · 2030-31</span><b>Land</b><p>Arrive and stabilise · German B2 on the ground if DE · ship the P20 playbook</p></div>
   </div>
 
-  <!-- ======= YEAR 1 ======= -->
-  <div class="yr-pane active" id="res-y1">
-    <span class="yr-label y1">Year 1 · Jun 2026 – Jun 2027</span>
-    <p class="sub">Gate year. English exam first, then SQL + Git + n8n foundations. Everything else waits. Exit: IELTS 7+ banked, 3 public repos live, can call an API without a tutorial open.</p>
-
-    <div class="callout go"><b>Year 1 focus areas: </b>
-      <span class="focus-pill" style="color:var(--go);border-color:var(--go)">English (IELTS/PTE)</span>
-      <span class="focus-pill" style="color:var(--go);border-color:var(--go)">SQL fundamentals</span>
-      <span class="focus-pill" style="color:var(--go);border-color:var(--go)">Git &amp; GitHub</span>
-      <span class="focus-pill" style="color:var(--go);border-color:var(--go)">n8n core</span>
-      <span class="focus-pill" style="color:var(--go);border-color:var(--go)">Python basics</span>
-      <span class="focus-pill" style="color:var(--go);border-color:var(--go)">Google Data Analytics cert</span>
-    </div>
-
-    <div class="daily-block">
-      <h4>📅 Daily study routine · Year 1 (~1.5 hrs/day)</h4>
-      <div class="daily-row">
-        <span class="daily-time">06:00–06:45</span>
-        <div class="daily-act">
-          <b>English exam prep (Months 1–5)</b>
-          <p>IELTS Liz for task walkthroughs Mon–Fri. Every 2nd Saturday: a full timed BC/IDP mock.</p>
-          <div class="links">
-            <a class="rl" href="https://www.youtube.com/@ieltsliz" target="_blank" rel="noopener">IELTS Liz · YouTube</a>
-            <a class="rl" href="https://ieltsliz.com" target="_blank" rel="noopener">ieltsliz.com (free lessons)</a>
-            <a class="rl" href="https://www.youtube.com/@IELTSadvantage" target="_blank" rel="noopener">IELTS Advantage · YouTube</a>
-            <a class="rl" href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests" target="_blank" rel="noopener">BC free mocks</a>
-            <a class="rl" href="https://ielts.idp.com/india" target="_blank" rel="noopener">IDP India · book exam</a>
-            <a class="rl" href="https://www.amazon.in/s?k=cambridge+ielts+academic" target="_blank" rel="noopener">Cambridge books 17-19</a>
-            <a class="rl" href="https://www.pearsonpte.com" target="_blank" rel="noopener">PTE Academic (alternative)</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">21:00–21:40</span>
-        <div class="daily-act">
-          <b>SQL → Python → n8n (Months 1–12, rotate weekly)</b>
-          <p>Week 1-4: SQLBolt + Mode SQL. Week 5-12: Automate the Boring Stuff chapters. Week 13+: n8n core nodes + Nate Herk builds.</p>
-          <div class="links">
-            <a class="rl" href="https://sqlbolt.com" target="_blank" rel="noopener">SQLBolt (free, interactive)</a>
-            <a class="rl" href="https://mode.com/sql-tutorial" target="_blank" rel="noopener">Mode SQL tutorial</a>
-            <a class="rl" href="https://www.kaggle.com/learn" target="_blank" rel="noopener">Kaggle Learn (Python + SQL)</a>
-            <a class="rl" href="https://automatetheboringstuff.com" target="_blank" rel="noopener">Automate the Boring Stuff (free)</a>
-            <a class="rl" href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">Corey Schafer · YouTube</a>
-            <a class="rl" href="https://docs.n8n.io" target="_blank" rel="noopener">n8n official docs</a>
-            <a class="rl" href="https://www.youtube.com/@nateherk" target="_blank" rel="noopener">Nate Herk · n8n builds</a>
-            <a class="rl" href="https://www.youtube.com/@leonvanzyl" target="_blank" rel="noopener">Leon van Zyl · n8n</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Weekend · Sat</span>
-        <div class="daily-act">
-          <b>Google Data Analytics cert progress</b>
-          <p>One module per weekend. Audit free; apply for financial aid to get the cert free (high approval for Indian applicants).</p>
-          <div class="links">
-            <a class="rl" href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" rel="noopener">Google Data Analytics · Coursera</a>
-            <a class="rl" href="https://www.youtube.com/@AlexTheAnalyst" target="_blank" rel="noopener">Alex the Analyst · YouTube</a>
-            <a class="rl" href="https://www.youtube.com/@LukeBarousse" target="_blank" rel="noopener">Luke Barousse · YouTube</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Weekend · Sun</span>
-        <div class="daily-act">
-          <b>Portfolio project build (P01, P02, P03)</b>
-          <p>2 hrs on a project. Commit to GitHub. Write one README paragraph. Done beats perfect.</p>
-          <div class="links">
-            <a class="rl" href="https://github.com" target="_blank" rel="noopener">GitHub (create account + repo)</a>
-            <a class="rl" href="https://docs.github.com/en/get-started/quickstart" target="_blank" rel="noopener">GitHub Quickstart docs</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3>Year 1 · all study materials</h3>
-    <div class="grid2">
-      <div class="res"><h4>IELTS Liz + IELTS Advantage (YouTube)</h4><p>Former-examiner walkthroughs of Writing Task 1/2, Reading, Listening, Speaking. Core free curriculum months 1-4.</p><div class="meta"><span>COST Free</span><span>TIME 3-4 mo</span><span>DIFF Medium</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://www.youtube.com/@ieltsliz" target="_blank" rel="noopener">IELTS Liz · YouTube</a><a class="rl" href="https://ieltsliz.com" target="_blank" rel="noopener">ieltsliz.com</a><a class="rl" href="https://www.youtube.com/@IELTSadvantage" target="_blank" rel="noopener">IELTS Advantage · YouTube</a></div></div>
-      <div class="res"><h4>British Council / IDP mocks + Cambridge IELTS 17-19</h4><p>The only practice material that behaves like the real exam. One full timed mock every second Saturday.</p><div class="meta"><span>COST Free + ₹900-1,300/book</span><span>TIME ongoing</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests" target="_blank" rel="noopener">BC free mocks</a><a class="rl" href="https://ielts.idp.com/india" target="_blank" rel="noopener">IDP India · book</a><a class="rl" href="https://www.amazon.in/s?k=cambridge+ielts+academic" target="_blank" rel="noopener">Cambridge books</a></div></div>
-      <div class="res"><h4>IELTS Academic exam (₹18-18.5K)</h4><p>Target 7.0+ each band. One Skill Retake (~₹12-13K) available if you miss one band. Book via IDP or BC.</p><div class="meta"><span>COST ₹18-18.5K</span><span>RECOG AU + DE + global</span></div><div class="links"><a class="rl" href="https://ielts.org" target="_blank" rel="noopener">ielts.org</a><a class="rl" href="https://ielts.idp.com/india" target="_blank" rel="noopener">Book · IDP India</a></div></div>
-      <div class="res"><h4>PTE Academic (alternative, ≈ ₹18K)</h4><p>Computer-scored; Superior band (79+ each) = +20 AU points. Sit free mocks on both IELTS + PTE then commit to one.</p><div class="meta"><span>COST ≈ ₹18K</span><span>VALUE +20 pts if Superior</span><span>RECOG AU yes · DE: IELTS safer</span></div><div class="links"><a class="rl" href="https://www.pearsonpte.com" target="_blank" rel="noopener">pearsonpte.com</a><a class="rl" href="https://www.pearsonpte.com/pte-academic/preparation/practice-tests" target="_blank" rel="noopener">Free PTE mocks</a></div></div>
-      <div class="res"><h4>SQLBolt + Mode SQL tutorial</h4><p>Interactive SQL from zero. SQLBolt for syntax, Mode for real analyst-style queries. Finish both before touching pandas.</p><div class="meta"><span>COST Free</span><span>TIME 3-4 wks</span><span>DIFF Easy</span><span>VALUE Essential for all AU/DE roles</span></div><div class="links"><a class="rl" href="https://sqlbolt.com" target="_blank" rel="noopener">SQLBolt</a><a class="rl" href="https://mode.com/sql-tutorial" target="_blank" rel="noopener">Mode SQL</a></div></div>
-      <div class="res"><h4>Automate the Boring Stuff + Corey Schafer</h4><p>The ops-person Python path: files, Sheets, requests, scheduling. Schafer for fundamentals done properly.</p><div class="meta"><span>COST Free</span><span>TIME 3-5 mo</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://automatetheboringstuff.com" target="_blank" rel="noopener">Free book (online)</a><a class="rl" href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">Corey Schafer · YouTube</a></div></div>
-      <div class="res"><h4>n8n docs + Nate Herk + Leon van Zyl</h4><p>Official docs are genuinely good. These channels cover real agentic n8n builds (2025-26 era), not toy demos.</p><div class="meta"><span>COST Free + VPS ₹400-600/mo Y2</span><span>VALUE High in AU/DE SMEs</span></div><div class="links"><a class="rl" href="https://docs.n8n.io" target="_blank" rel="noopener">n8n official docs</a><a class="rl" href="https://www.youtube.com/@nateherk" target="_blank" rel="noopener">Nate Herk</a><a class="rl" href="https://www.youtube.com/@leonvanzyl" target="_blank" rel="noopener">Leon van Zyl</a></div></div>
-      <div class="res"><h4>Google Data Analytics (Coursera) · Year 1 cert</h4><p>SQL, spreadsheets, cleaning, Tableau, capstone. Audit free; apply for financial aid for the cert badge.</p><div class="meta"><span>COST Free–₹8K total</span><span>TIME 4-6 mo</span><span>RECOG Global, HR-known</span></div><div class="links"><a class="rl" href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" rel="noopener">Coursera · course page</a><a class="rl" href="https://www.youtube.com/@AlexTheAnalyst" target="_blank" rel="noopener">Alex the Analyst</a><a class="rl" href="https://www.youtube.com/@LukeBarousse" target="_blank" rel="noopener">Luke Barousse</a></div></div>
-      <div class="res"><h4>Google AI Essentials · quick win cert</h4><p>2-3 week cert. Free or ~₹3K. Gets "AI credential" on LinkedIn in Year 1 while IELTS prep runs in parallel.</p><div class="meta"><span>COST Free–₹3K</span><span>TIME 2-3 wks</span><span>VALUE Medium · fast signal</span></div><div class="links"><a class="rl" href="https://www.coursera.org/learn/google-ai-essentials" target="_blank" rel="noopener">Google AI Essentials · Coursera</a></div></div>
-      <div class="res"><h4>Kaggle Learn (Python + SQL + pandas)</h4><p>Hands-on micro-courses with instant feedback. Use Kaggle datasets as raw material for portfolio README numbers.</p><div class="meta"><span>COST Free</span><span>TIME 1-3 mo</span></div><div class="links"><a class="rl" href="https://www.kaggle.com/learn" target="_blank" rel="noopener">Kaggle Learn</a><a class="rl" href="https://www.kaggle.com/learn/python" target="_blank" rel="noopener">Kaggle Python course</a><a class="rl" href="https://www.kaggle.com/learn/pandas" target="_blank" rel="noopener">Kaggle pandas</a></div></div>
-    </div>
+  <h3>Year 1 · Jun 2026 → mid 2027 · the English gate + data foundations</h3>
+  <div class="card go" style="margin-bottom:14px"><h4>Your Year-1 day · 90 min, every day</h4>
+    <div class="slot"><span class="t">06:30</span><div><b>English practice · 30 min</b><p>Mon Writing T2 · Tue Reading · Wed Listening · Thu Speaking (record yourself) · Fri Writing T1 — from <a href="https://ieltsliz.com" target="_blank" rel="noopener">ieltsliz.com</a> and <a href="https://www.youtube.com/@IELTSadvantage" target="_blank" rel="noopener">IELTS Advantage</a>.</p></div></div>
+    <div class="slot"><span class="t">Commute</span><div><b>Ears only</b><p><a href="https://www.youtube.com/@ieltsliz" target="_blank" rel="noopener">IELTS Liz audio</a> or a <a href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests" target="_blank" rel="noopener">BC listening test</a>. Free band points.</p></div></div>
+    <div class="slot"><span class="t">20:30</span><div><b>Course block · 60 min</b><p><a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" rel="noopener">Google Data Analytics</a>, one lesson + every quiz. When it ends: SQL reps on <a href="https://sqlbolt.com" target="_blank" rel="noopener">SQLBolt</a>, then Python via <a href="https://automatetheboringstuff.com" target="_blank" rel="noopener">Automate the Boring Stuff</a>.</p></div></div>
+    <div class="slot"><span class="t">Weekend</span><div><b>Mock + build</b><p>Alternate Saturdays: full timed mock (<a href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests" target="_blank" rel="noopener">BC</a> / <a href="https://ielts.idp.com/india" target="_blank" rel="noopener">IDP</a>). Sundays: project P01-P03 + one GitHub README (<a href="https://learngitbranching.js.org" target="_blank" rel="noopener">Learn Git Branching</a> first).</p></div></div>
+  </div>
+  <div class="grid2">
+    <div class="res"><h4>IELTS Liz + IELTS Advantage (YouTube)</h4><p>Former-examiner walkthroughs of Writing Task 1/2, Reading, Listening, Speaking. Your core free curriculum for months 1-4.</p><div class="meta"><span>COST Free</span><span>TIME 3-4 mo</span><span>DIFF Medium</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://www.youtube.com/@ieltsliz" target="_blank" rel="noopener">IELTS Liz · YouTube</a><a class="rl" href="https://ieltsliz.com" target="_blank" rel="noopener">ieltsliz.com</a><a class="rl" href="https://www.youtube.com/@IELTSadvantage" target="_blank" rel="noopener">IELTS Advantage · YouTube</a></div></div>
+    <div class="res"><h4>British Council / IDP official mocks + Cambridge IELTS books 17-19</h4><p>The only practice material that behaves like the real exam. One full timed mock every second Saturday; save the newest book for final rehearsal.</p><div class="meta"><span>COST Free + ₹900-1,300/book</span><span>TIME ongoing</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests" target="_blank" rel="noopener">BC free mocks</a><a class="rl" href="https://ielts.idp.com/india" target="_blank" rel="noopener">IDP India</a><a class="rl" href="https://www.amazon.in/s?k=cambridge+ielts+academic" target="_blank" rel="noopener">Cambridge books · Amazon.in</a></div></div>
+    <div class="res"><h4>IELTS Academic exam · months 4-6</h4><p>~₹18,000-18,500 in India (2026); One Skill Retake (~₹12-13K) lets you redo a single band instead of the whole exam. Target 7.0+ each band, banked before anything else.</p><div class="meta"><span>COST ₹18-18.5K</span><span>DIFF Medium-hard</span><span>RECOG AU + DE + global</span></div><div class="links"><a class="rl" href="https://ielts.org" target="_blank" rel="noopener">ielts.org</a><a class="rl" href="https://ielts.idp.com/india" target="_blank" rel="noopener">Book · IDP India</a></div></div>
+    <div class="res"><h4>PTE Academic (the alternative)</h4><p>Accepted by Australian Home Affairs; computer-scored; many Indian candidates reach the Superior band (79+ each, worth +20 points) more reliably on PTE than IELTS 8s. Sit free scored mocks on both, then commit to one.</p><div class="meta"><span>COST ≈ ₹18K</span><span>DIFF Medium</span><span>VALUE +20 pts if Superior</span><span>RECOG AU yes · DE varies, IELTS safer for DE</span></div><div class="links"><a class="rl" href="https://www.pearsonpte.com" target="_blank" rel="noopener">pearsonpte.com</a></div></div>
+    <div class="res"><h4>Google Data Analytics (Coursera) · the 20:30 block</h4><p>SQL, spreadsheets, cleaning, Tableau, a capstone. Audit free; pay (~₹4K/mo) or use Coursera financial aid (high approval for Indian applicants, write a genuine 2-paragraph case) for the certificate.</p><div class="meta"><span>COST Free-₹8K total</span><span>TIME 4-6 mo</span><span>DIFF Easy-medium</span><span>VALUE High</span><span>RECOG Global, HR-known</span></div><div class="links"><a class="rl" href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" rel="noopener">Coursera · course page</a></div></div>
+    <div class="res"><h4>Google AI Essentials · the quick win</h4><p>2-3 weeks, one certificate HR recognises on sight. Slot it into a slow fortnight; it costs almost nothing and rounds out the Year-1 LinkedIn row.</p><div class="meta"><span>COST Free-₹3K</span><span>TIME 2-3 wks</span><span>DIFF Easy</span><span>VALUE Medium</span><span>RECOG Global</span></div><div class="links"><a class="rl" href="https://www.coursera.org/learn/google-ai-essentials" target="_blank" rel="noopener">Coursera · course page</a></div></div>
+    <div class="res"><h4>Excel, made visibly expert</h4><p>You live in Excel at work; make it legible. ExcelJet for functions and shortcuts, Leila Gharani for real-workbook technique, Microsoft's own free training for gaps. Runs alongside the day job, not in study hours.</p><div class="meta"><span>COST Free</span><span>TIME 1-2 mo, ambient</span><span>VALUE High</span></div><div class="links"><a class="rl" href="https://exceljet.net" target="_blank" rel="noopener">ExcelJet</a><a class="rl" href="https://www.youtube.com/@LeilaGharani" target="_blank" rel="noopener">Leila Gharani · YouTube</a><a class="rl" href="https://support.microsoft.com/en-us/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb" target="_blank" rel="noopener">Microsoft Excel training</a></div></div>
+    <div class="res"><h4>Alex the Analyst + Luke Barousse (YouTube)</h4><p>Project-first SQL, Excel, Power BI, Python-for-data, plus portfolio and resume guidance for career-switchers. The free path that actually finishes.</p><div class="meta"><span>COST Free</span><span>TIME ongoing</span><span>VALUE High</span></div><div class="links"><a class="rl" href="https://www.youtube.com/@AlexTheAnalyst" target="_blank" rel="noopener">Alex the Analyst</a><a class="rl" href="https://www.youtube.com/@LukeBarousse" target="_blank" rel="noopener">Luke Barousse</a></div></div>
+    <div class="res"><h4>Kaggle Learn + SQLBolt + Mode SQL tutorial</h4><p>Hands-on micro-courses with instant feedback: Python, pandas, SQL, visualisation. Use Kaggle datasets as raw material for portfolio write-ups.</p><div class="meta"><span>COST Free</span><span>TIME 1-3 mo</span><span>DIFF Easy</span><span>VALUE Medium-high</span></div><div class="links"><a class="rl" href="https://www.kaggle.com/learn" target="_blank" rel="noopener">Kaggle Learn</a><a class="rl" href="https://sqlbolt.com" target="_blank" rel="noopener">SQLBolt</a><a class="rl" href="https://mode.com/sql-tutorial" target="_blank" rel="noopener">Mode SQL</a></div></div>
+    <div class="res"><h4>Git &amp; GitHub, properly</h4><p>Branches, PRs, READMEs — your portfolio lives here, and sloppy Git hygiene silently discredits good projects. Learn Git Branching teaches the model in an afternoon; GitHub Skills covers PR flow; Pro Git is the free reference.</p><div class="meta"><span>COST Free</span><span>TIME 2-3 wks</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://learngitbranching.js.org" target="_blank" rel="noopener">Learn Git Branching</a><a class="rl" href="https://skills.github.com" target="_blank" rel="noopener">GitHub Skills</a><a class="rl" href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Pro Git · free book</a></div></div>
+    <div class="res"><h4>n8n core · docs + Level One course</h4><p>Closest to your current work, fastest portfolio wins. The official docs plus the free Level One course; build P01's nodes as you learn. Advanced agentic builds and self-hosting move to Year 2.</p><div class="meta"><span>COST Free</span><span>TIME 1-2 mo</span><span>VALUE High in AU/DE SMEs</span></div><div class="links"><a class="rl" href="https://docs.n8n.io" target="_blank" rel="noopener">n8n docs</a><a class="rl" href="https://docs.n8n.io/courses/level-one/" target="_blank" rel="noopener">Level One course</a></div></div>
+    <div class="res"><h4>Automate the Boring Stuff (free book) + Corey Schafer · from ~month 6</h4><p>The canonical ops-person Python path: files, Sheets, requests, scheduling. Schafer for fundamentals done properly. Starts once Google Data Analytics ends and takes over the 20:30 block.</p><div class="meta"><span>COST Free</span><span>TIME 3-5 mo</span><span>DIFF Medium</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://automatetheboringstuff.com" target="_blank" rel="noopener">Free book</a><a class="rl" href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">Corey Schafer</a></div></div>
   </div>
 
-  <!-- ======= YEAR 2 ======= -->
-  <div class="yr-pane" id="res-y2">
-    <span class="yr-label y2">Year 2 · Jun 2027 – Jun 2028</span>
-    <p class="sub">Builder year. Python for real automation, REST APIs deeply, AWS Cloud Practitioner, Power BI, Hugging Face Agents cert. First paid freelance or external client delivery. Exit: one foreign/external client reference + AWS cert on LinkedIn.</p>
-
-    <div class="callout info"><b>Year 2 focus areas: </b>
-      <span class="focus-pill" style="color:var(--info);border-color:var(--info)">Python automation (requests, pandas)</span>
-      <span class="focus-pill" style="color:var(--info);border-color:var(--info)">REST APIs + webhooks</span>
-      <span class="focus-pill" style="color:var(--info);border-color:var(--info)">AWS Cloud Practitioner</span>
-      <span class="focus-pill" style="color:var(--info);border-color:var(--info)">Power BI</span>
-      <span class="focus-pill" style="color:var(--info);border-color:var(--info)">HuggingFace Agents cert</span>
-      <span class="focus-pill" style="color:var(--info);border-color:var(--info)">Make + Zapier (1-2 weekends)</span>
-    </div>
-
-    <div class="daily-block">
-      <h4>📅 Daily study routine · Year 2 (~1.5 hrs/day)</h4>
-      <div class="daily-row">
-        <span class="daily-time">06:00–06:45</span>
-        <div class="daily-act">
-          <b>Python automation depth (Months 13–18)</b>
-          <p>100 Days of Code if you need structure — buy only on Udemy sale (₹449-699). Otherwise Angela Yu's free YouTube previews + Corey Schafer advanced.</p>
-          <div class="links">
-            <a class="rl" href="https://www.udemy.com/course/100-days-of-code/" target="_blank" rel="noopener">100 Days of Code · Udemy</a>
-            <a class="rl" href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">Corey Schafer (advanced)</a>
-            <a class="rl" href="https://realpython.com" target="_blank" rel="noopener">Real Python (free articles)</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">06:00–06:45</span>
-        <div class="daily-act">
-          <b>APIs + AWS prep (Months 19–24)</b>
-          <p>Postman Learning Centre for auth/webhooks, then pivot to AWS Cloud Practitioner via Andrew Brown's free course on freeCodeCamp.</p>
-          <div class="links">
-            <a class="rl" href="https://learning.postman.com" target="_blank" rel="noopener">Postman Learning Centre</a>
-            <a class="rl" href="https://www.freecodecamp.org/learn/back-end-development-and-apis/" target="_blank" rel="noopener">freeCodeCamp APIs</a>
-            <a class="rl" href="https://www.youtube.com/watch?v=NhDYbskXRgc" target="_blank" rel="noopener">AWS CCP free course · fCC</a>
-            <a class="rl" href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener">AWS CCP exam page</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">21:00–21:40</span>
-        <div class="daily-act">
-          <b>Power BI + Hugging Face Agents (evening rotation)</b>
-          <p>Microsoft Learn Power BI path in even weeks; HuggingFace Agents Course in odd weeks. Get both done by Month 22.</p>
-          <div class="links">
-            <a class="rl" href="https://learn.microsoft.com/en-us/training/powerplatform/power-bi" target="_blank" rel="noopener">Power BI path · Microsoft Learn</a>
-            <a class="rl" href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/" target="_blank" rel="noopener">PL-300 exam (optional)</a>
-            <a class="rl" href="https://huggingface.co/learn/agents-course" target="_blank" rel="noopener">HuggingFace Agents course (free cert)</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Weekend · Sat</span>
-        <div class="daily-act">
-          <b>DeepLearning.AI short courses (one per fortnight)</b>
-          <p>One 1-3hr focused course per fortnight. RAG, tool use, LangChain basics. Implement each in a project the same weekend.</p>
-          <div class="links">
-            <a class="rl" href="https://www.deeplearning.ai/short-courses/" target="_blank" rel="noopener">DeepLearning.AI short courses</a>
-            <a class="rl" href="https://www.anthropic.com/learn" target="_blank" rel="noopener">Anthropic Academy (free badges)</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Weekend · Sun</span>
-        <div class="daily-act">
-          <b>Projects P04–P08 + freelance outreach</b>
-          <p>2 hrs building. By end of Year 2, target your first external/paid client reference. LinkedIn 2 posts/week starting Month 18.</p>
-          <div class="links">
-            <a class="rl" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="rl" href="https://www.upwork.com" target="_blank" rel="noopener">Upwork (first freelance)</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3>Year 2 · all study materials</h3>
-    <div class="grid2">
-      <div class="res"><h4>100 Days of Code (Udemy, Angela Yu)</h4><p>Buy on sale (₹449-699, every 2-3 weeks). Only if you need external structure — the free path works too.</p><div class="meta"><span>COST ₹449-699 on sale</span><span>TIME 4-6 mo</span><span>VALUE High if you finish</span></div><div class="links"><a class="rl" href="https://www.udemy.com/course/100-days-of-code/" target="_blank" rel="noopener">Udemy · course page</a></div></div>
-      <div class="res"><h4>Postman Learning Centre + freeCodeCamp APIs</h4><p>Auth, pagination, webhooks, error handling. The skill that makes every other tool composable.</p><div class="meta"><span>COST Free</span><span>TIME 1-2 mo</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://learning.postman.com" target="_blank" rel="noopener">Postman Learning</a><a class="rl" href="https://www.freecodecamp.org/learn/back-end-development-and-apis/" target="_blank" rel="noopener">freeCodeCamp APIs</a></div></div>
-      <div class="res"><h4>AWS Cloud Practitioner (CLF-C02) · US$100</h4><p>Free prep: Andrew Brown's full course on freeCodeCamp YouTube (~14hrs). Exam ~₹8.5K. Recognised by both AU and DE employers.</p><div class="meta"><span>COST US$100 (~₹8.5K)</span><span>TIME 6-10 wks</span><span>RECOG Global</span></div><div class="links"><a class="rl" href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener">AWS CCP exam page</a><a class="rl" href="https://www.youtube.com/watch?v=NhDYbskXRgc" target="_blank" rel="noopener">Free full course · fCC YouTube</a></div></div>
-      <div class="res"><h4>Hugging Face Agents Course (free cert)</h4><p>Free certified course on agent fundamentals, frameworks and evaluation. One of the best free AI credentials of 2025-26. Target Month 22.</p><div class="meta"><span>COST Free</span><span>TIME 4-6 wks</span><span>VALUE High · 2026 signal</span></div><div class="links"><a class="rl" href="https://huggingface.co/learn/agents-course" target="_blank" rel="noopener">Course page</a><a class="rl" href="https://huggingface.co" target="_blank" rel="noopener">HuggingFace.co</a></div></div>
-      <div class="res"><h4>Microsoft Learn Power BI path</h4><p>Official free path from zero to data-model + DAX basics. PL-300 (~₹10K) is optional polish, valued in DE's Microsoft-heavy market.</p><div class="meta"><span>COST Free; exam ~₹10K</span><span>TIME 2-3 mo</span><span>RECOG Global</span></div><div class="links"><a class="rl" href="https://learn.microsoft.com/en-us/training/powerplatform/power-bi" target="_blank" rel="noopener">Power BI learning path</a><a class="rl" href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/" target="_blank" rel="noopener">PL-300 cert</a></div></div>
-      <div class="res"><h4>Anthropic Academy (free badges)</h4><p>You already build with Claude at work. Formalise it: API, tool use, MCP courses. You'll pass these fast.</p><div class="meta"><span>COST Free</span><span>TIME 2-6 wks</span><span>VALUE High · strong 2026 signal</span></div><div class="links"><a class="rl" href="https://www.anthropic.com/learn" target="_blank" rel="noopener">anthropic.com/learn</a></div></div>
-      <div class="res"><h4>DeepLearning.AI short courses</h4><p>One per fortnight. RAG, agents, LangGraph, evaluation. Implement each in a project the same week.</p><div class="meta"><span>COST Free</span><span>TIME ongoing</span><span>VALUE High</span></div><div class="links"><a class="rl" href="https://www.deeplearning.ai/short-courses/" target="_blank" rel="noopener">DeepLearning.AI</a><a class="rl" href="https://academy.langchain.com" target="_blank" rel="noopener">LangChain Academy</a></div></div>
-      <div class="res"><h4>Make + Zapier (1-2 weekends each)</h4><p>Same mental model as n8n, different skin. Learn enough to translate; clients and employers vary in platform.</p><div class="meta"><span>COST Free tiers</span><span>TIME 1-2 weekends each</span><span>VALUE T3 · breadth signal</span></div><div class="links"><a class="rl" href="https://www.make.com/en/help/getting-started" target="_blank" rel="noopener">Make · getting started</a><a class="rl" href="https://zapier.com/learn" target="_blank" rel="noopener">Zapier Learn</a></div></div>
-    </div>
+  <h3>Year 2 · mid 2027 → mid 2028 · skills + identity</h3>
+  <div class="card info" style="margin-bottom:14px"><h4>Your Year-2 day · 100 min, one track per session</h4>
+    <div class="slot"><span class="t">06:30</span><div><b>Track A or B · 40 min</b><p>AU-primary: Python (<a href="https://www.udemy.com/course/100-days-of-code/" target="_blank" rel="noopener">100 Days of Code</a>) or cert study (<a href="https://skillbuilder.aws/exam-prep/cloud-practitioner" target="_blank" rel="noopener">AWS Skill Builder</a>). DE-active: German lesson instead (<a href="https://learngerman.dw.com" target="_blank" rel="noopener">Nicos Weg</a>). Never both in one session.</p></div></div>
+    <div class="slot"><span class="t">Commute</span><div><b>Same track, audio</b><p><a href="https://www.easygerman.fm" target="_blank" rel="noopener">Easy German podcast</a> or tech/cloud audio summaries for the cert you're sitting.</p></div></div>
+    <div class="slot"><span class="t">20:30</span><div><b>Build · 60 min</b><p>Python scripts, <a href="https://docs.n8n.io" target="_blank" rel="noopener">n8n</a> workflows, the quarter's project (P04-P08). Code beats courses from here on.</p></div></div>
+    <div class="slot"><span class="t">Tue + Thu</span><div><b>LinkedIn · 10 min, 21:30</b><p>Post what you built or learned. Small effort, compounding visibility.</p></div></div>
+  </div>
+  <div class="grid2">
+    <div class="res"><h4>100 Days of Code (Udemy, Angela Yu)</h4><p>The one paid course worth buying if you need structure; buy only during Udemy sales (₹449-699, every 2-3 weeks). Owns the Year-2 morning block on Python days.</p><div class="meta"><span>COST ₹449-699</span><span>TIME 4-6 mo</span><span>VALUE High if you finish</span></div><div class="links"><a class="rl" href="https://www.udemy.com/course/100-days-of-code/" target="_blank" rel="noopener">Udemy · course page</a></div></div>
+    <div class="res"><h4>Postman Learning Center + freeCodeCamp APIs</h4><p>Auth, pagination, webhooks, error handling. The skill that makes every other tool composable — and the most underrated employable line on the whole stack.</p><div class="meta"><span>COST Free</span><span>TIME 1-2 mo</span><span>VALUE Essential</span></div><div class="links"><a class="rl" href="https://learning.postman.com" target="_blank" rel="noopener">Postman Learning</a><a class="rl" href="https://www.freecodecamp.org/learn/back-end-development-and-apis/" target="_blank" rel="noopener">freeCodeCamp APIs</a></div></div>
+    <div class="res"><h4>n8n advanced + self-hosting · Nate Herk &amp; Leon van Zyl</h4><p>These two channels cover real agentic n8n builds (2025-26 era), not toy demos. Self-host on a ₹400-600/mo VPS this year to learn deployment; it becomes P04's backbone.</p><div class="meta"><span>COST Free + small VPS</span><span>TIME ongoing</span><span>VALUE High in AU/DE SMEs</span></div><div class="links"><a class="rl" href="https://www.youtube.com/@nateherk" target="_blank" rel="noopener">Nate Herk</a><a class="rl" href="https://www.youtube.com/@leonvanzyl" target="_blank" rel="noopener">Leon van Zyl</a><a class="rl" href="https://docs.n8n.io" target="_blank" rel="noopener">n8n docs</a></div></div>
+    <div class="res"><h4>AWS Cloud Practitioner (CLF-C02)</h4><p>Enough cloud to deploy what you build, made legible to recruiters. Skill Builder's free exam-prep path is sufficient; one practice exam, then book the real thing.</p><div class="meta"><span>COST Exam US$100 (~₹8.5K)</span><span>TIME 6-10 wks</span><span>VALUE High</span><span>RECOG Global</span></div><div class="links"><a class="rl" href="https://skillbuilder.aws/exam-prep/cloud-practitioner" target="_blank" rel="noopener">Skill Builder · CCP exam prep</a><a class="rl" href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener">Exam page</a></div></div>
+    <div class="res"><h4>Microsoft Learn: Power BI path (+ optional PL-300)</h4><p>Official free path from zero to data-model + DAX basics. The PL-300 exam (~₹10K India) is optional polish in Year 2-3, valued in DE's Microsoft-heavy market.</p><div class="meta"><span>COST Free; exam ~₹10K</span><span>TIME 2-3 mo</span><span>VALUE Medium-high</span><span>RECOG Global</span></div><div class="links"><a class="rl" href="https://learn.microsoft.com/en-us/training/powerplatform/power-bi" target="_blank" rel="noopener">Power BI path</a><a class="rl" href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/" target="_blank" rel="noopener">PL-300 exam</a></div></div>
+    <div class="res"><h4>Hugging Face Agents Course (free, certificate)</h4><p>Free certified course on agent fundamentals, frameworks and evaluation. One of the best free AI credentials of 2025-26; sits naturally after the Python block matures.</p><div class="meta"><span>COST Free</span><span>TIME 4-6 wks</span><span>DIFF Medium</span><span>VALUE High</span></div><div class="links"><a class="rl" href="https://huggingface.co/learn/agents-course" target="_blank" rel="noopener">Course page</a></div></div>
+    <div class="res"><h4>Anthropic Academy (free)</h4><p>Official courses on building with the Claude API, tool use and MCP. You already build with Claude at work; this turns habit into credentialed, current skill.</p><div class="meta"><span>COST Free</span><span>TIME 2-6 wks</span><span>VALUE High</span><span>RECOG Strong 2026 signal</span></div><div class="links"><a class="rl" href="https://www.anthropic.com/learn" target="_blank" rel="noopener">anthropic.com/learn</a></div></div>
+    <div class="res"><h4>Make + Zapier · the translation layer</h4><p>Same mental model as n8n with different skins. One-two weekends each via the official academies — enough to translate for clients and employers who standardised elsewhere. Never your headline skill.</p><div class="meta"><span>COST Free</span><span>TIME 2-3 weekends</span><span>VALUE Medium</span></div><div class="links"><a class="rl" href="https://academy.make.com" target="_blank" rel="noopener">Make Academy</a><a class="rl" href="https://learn.zapier.com" target="_blank" rel="noopener">Zapier Learn</a></div></div>
+    <div class="res"><h4>German A1 → A2 · only if the DE runway went live</h4><p>Decision made at the end of Year 1, not before. Nicos Weg (DW, free) + Anki top-1000 deck + Duolingo streak as glue, 40 min/day in the morning track. Full month-by-month path, weekly template and exam costs live in the <b>German tab</b>.</p><div class="meta"><span>COST Free to learn</span><span>TIME ~8 mo at 40 min/day</span><span>VALUE DE route only</span></div><div class="links"><a class="rl" href="https://learngerman.dw.com" target="_blank" rel="noopener">Nicos Weg · DW</a><a class="rl" href="https://apps.ankiweb.net" target="_blank" rel="noopener">Anki</a><a class="rl" href="https://www.duolingo.com" target="_blank" rel="noopener">Duolingo</a></div></div>
   </div>
 
-  <!-- ======= YEAR 3 ======= -->
-  <div class="yr-pane" id="res-y3">
-    <span class="yr-label y3">Year 3 · Jun 2028 – Jun 2029</span>
-    <p class="sub">Agent year. LangGraph/CrewAI, RAG, MCP servers, Docker. NAATI CCL Hindi for +5 visa points. Skills assessment paid. Exit: can whiteboard a multi-agent system and defend its failure modes.</p>
-
-    <div class="callout au"><b>Year 3 focus areas: </b>
-      <span class="focus-pill" style="color:var(--au-strong);border-color:var(--au-strong)">LangGraph / CrewAI</span>
-      <span class="focus-pill" style="color:var(--au-strong);border-color:var(--au-strong)">RAG (embeddings, vector DBs)</span>
-      <span class="focus-pill" style="color:var(--au-strong);border-color:var(--au-strong)">MCP servers</span>
-      <span class="focus-pill" style="color:var(--au-strong);border-color:var(--au-strong)">Docker basics</span>
-      <span class="focus-pill" style="color:var(--au-strong);border-color:var(--au-strong)">NAATI CCL Hindi (+5 pts)</span>
-      <span class="focus-pill" style="color:var(--au-strong);border-color:var(--au-strong)">Skills assessment filed</span>
-    </div>
-
-    <div class="daily-block">
-      <h4>📅 Daily study routine · Year 3 (~1.5 hrs/day)</h4>
-      <div class="daily-row">
-        <span class="daily-time">06:00–06:45</span>
-        <div class="daily-act">
-          <b>LangGraph / CrewAI agent patterns</b>
-          <p>LangChain Academy for LangGraph (free, structured). Sam Witteveen + James Briggs on YouTube for current RAG + agent builds.</p>
-          <div class="links">
-            <a class="rl" href="https://academy.langchain.com" target="_blank" rel="noopener">LangChain Academy (LangGraph)</a>
-            <a class="rl" href="https://www.youtube.com/@samwitteveenai" target="_blank" rel="noopener">Sam Witteveen · agents + RAG</a>
-            <a class="rl" href="https://www.youtube.com/@jamesbriggs" target="_blank" rel="noopener">James Briggs · RAG deep dives</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">21:00–21:40</span>
-        <div class="daily-act">
-          <b>RAG, vector DBs + Docker basics</b>
-          <p>Pinecone Learning Centre for retrieval design. Docker for the day you self-host n8n or deploy an agent. Two focused weeks, learned just-in-time.</p>
-          <div class="links">
-            <a class="rl" href="https://www.pinecone.io/learn/" target="_blank" rel="noopener">Pinecone Learning Centre</a>
-            <a class="rl" href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Docker · get started</a>
-            <a class="rl" href="https://www.youtube.com/watch?v=pg19Z8LL06w" target="_blank" rel="noopener">Docker in 1hr · fCC YouTube</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Weekend · Sat</span>
-        <div class="daily-act">
-          <b>NAATI CCL Hindi prep (Month 28-32)</b>
-          <p>~4-8 weeks prep. Sit online from India. Result valid 3 years. Worth +5 points — the easiest points boost in the whole plan at ≈₹12-13K.</p>
-          <div class="links">
-            <a class="rl" href="https://www.naati.com.au/migration-assessments/ccl/" target="_blank" rel="noopener">NAATI CCL · official info</a>
-            <a class="rl" href="https://www.youtube.com/results?search_query=naati+ccl+hindi+preparation" target="_blank" rel="noopener">NAATI CCL Hindi prep · YouTube</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Weekend · Sun</span>
-        <div class="daily-act">
-          <b>Projects P09–P14 + skills assessment prep</b>
-          <p>P09 (RAG system) is the Year 3 centrepiece. Concurrently: compile evidence portfolio for VETASSESS skills assessment (file this year ~₹70-80K).</p>
-          <div class="links">
-            <a class="rl" href="https://www.vetassess.com.au" target="_blank" rel="noopener">VETASSESS · skills assessment</a>
-            <a class="rl" href="https://www.acs.org.au/msa/skills-assessment.html" target="_blank" rel="noopener">ACS · ICT skills assessment</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3>Year 3 · all study materials</h3>
-    <div class="grid2">
-      <div class="res"><h4>LangChain Academy (LangGraph free course)</h4><p>Structured free course on LangGraph — the most production-ready multi-agent framework as of 2026. Take this before CrewAI.</p><div class="meta"><span>COST Free</span><span>TIME 3-5 wks</span><span>DIFF Medium-hard</span></div><div class="links"><a class="rl" href="https://academy.langchain.com" target="_blank" rel="noopener">LangChain Academy</a></div></div>
-      <div class="res"><h4>James Briggs + Sam Witteveen (YouTube)</h4><p>Deep, current RAG and agent engineering content. Pinecone's free tier is enough for P09/P17.</p><div class="meta"><span>COST Free</span><span>DIFF Medium-hard</span><span>VALUE High</span></div><div class="links"><a class="rl" href="https://www.youtube.com/@jamesbriggs" target="_blank" rel="noopener">James Briggs</a><a class="rl" href="https://www.youtube.com/@samwitteveenai" target="_blank" rel="noopener">Sam Witteveen</a><a class="rl" href="https://www.pinecone.io/learn/" target="_blank" rel="noopener">Pinecone Learn</a></div></div>
-      <div class="res"><h4>DeepLearning.AI: RAG + Agents courses</h4><p>Specific courses: "Building and Evaluating Advanced RAG", "AI Agents in LangGraph", "Building Agentic RAG with LlamaIndex".</p><div class="meta"><span>COST Free</span><span>TIME 1-3 hrs each</span><span>VALUE High</span></div><div class="links"><a class="rl" href="https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/" target="_blank" rel="noopener">Advanced RAG course</a><a class="rl" href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank" rel="noopener">AI Agents in LangGraph</a><a class="rl" href="https://www.deeplearning.ai/short-courses/" target="_blank" rel="noopener">All short courses</a></div></div>
-      <div class="res"><h4>NAATI CCL Hindi · +5 visa points</h4><p>Online exam, sit from India. ~4-8 weeks prep. ≈₹12-13K (AUD 220). Valid 3 years. The cheapest points boost in this plan.</p><div class="meta"><span>COST ~₹12-13K</span><span>TIME 4-8 wks prep</span><span>VALUE +5 AU visa points</span></div><div class="links"><a class="rl" href="https://www.naati.com.au/migration-assessments/ccl/" target="_blank" rel="noopener">NAATI CCL official</a></div></div>
-      <div class="res"><h4>VETASSESS skills assessment</h4><p>File this year. Occupation: 224712 Organisation &amp; Methods Analyst or 224711 Management Consultant. One paid MARA session before filing (₹10-25K).</p><div class="meta"><span>COST ~₹70-80K</span><span>TIME 3-6 mo processing</span><span>RECOG Required for AU 189/190/491</span></div><div class="links"><a class="rl" href="https://www.vetassess.com.au" target="_blank" rel="noopener">VETASSESS</a><a class="rl" href="https://www.mara.gov.au" target="_blank" rel="noopener">MARA agent register</a></div></div>
-      <div class="res"><h4>Docker + Linux CLI basics</h4><p>Two focused weeks, learned just-in-time when you first self-host n8n or deploy a RAG system. Docker docs + fCC YouTube is enough.</p><div class="meta"><span>COST Free</span><span>TIME 2 wks</span><span>VALUE Needed for self-hosting</span></div><div class="links"><a class="rl" href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Docker get started</a><a class="rl" href="https://www.youtube.com/watch?v=pg19Z8LL06w" target="_blank" rel="noopener">Docker in 1hr · fCC</a><a class="rl" href="https://linuxjourney.com" target="_blank" rel="noopener">Linux Journey (free)</a></div></div>
-    </div>
+  <h3>Year 3 · mid 2028 → mid 2029 · agents, RAG + visa execution</h3>
+  <div class="card au" style="margin-bottom:14px"><h4>Your Year-3 day · 60 min, execution mode</h4>
+    <div class="slot"><span class="t">06:30</span><div><b>Applications + outreach · 30 min</b><p>2 tailored applications or 1 personalised AU/DE connection, every weekday — <a href="https://www.seek.com.au" target="_blank" rel="noopener">Seek</a>, <a href="https://www.linkedin.com/jobs" target="_blank" rel="noopener">LinkedIn Jobs</a>, <a href="https://www.stepstone.de" target="_blank" rel="noopener">StepStone</a>.</p></div></div>
+    <div class="slot"><span class="t">20:30</span><div><b>Alternating block · 30 min</b><p>One visa checklist item (<a href="https://immi.homeaffairs.gov.au" target="_blank" rel="noopener">immi.homeaffairs</a>) one day; two spoken interview answers the next — out loud, timed.</p></div></div>
+    <div class="slot"><span class="t">21:00</span><div><b>German maintenance · 20 min (DE route only)</b><p><a href="https://apps.ankiweb.net" target="_blank" rel="noopener">Anki</a> + one <a href="https://www.easygerman.fm" target="_blank" rel="noopener">Easy German</a> episode. Losing B1 now would waste two years of mornings.</p></div></div>
+    <div class="slot"><span class="t">Fortnightly</span><div><b>One short course, implemented</b><p>One <a href="https://www.deeplearning.ai/short-courses/" target="_blank" rel="noopener">DeepLearning.AI short course</a> per fortnight, applied to P09-P12 the same week. NAATI CCL prep blocks on weekends before the sitting.</p></div></div>
+  </div>
+  <div class="grid2">
+    <div class="res"><h4>DeepLearning.AI short courses + LangChain Academy</h4><p>Free, focused 1-3 hour courses: RAG, agents, LangGraph, evaluation. Take one per fortnight and implement each in a project the same week.</p><div class="meta"><span>COST Free</span><span>TIME ongoing</span><span>VALUE High</span></div><div class="links"><a class="rl" href="https://www.deeplearning.ai/short-courses/" target="_blank" rel="noopener">DeepLearning.AI</a><a class="rl" href="https://academy.langchain.com" target="_blank" rel="noopener">LangChain Academy</a></div></div>
+    <div class="res"><h4>James Briggs + Sam Witteveen (YouTube) · Pinecone learning centre</h4><p>Deep, current RAG and agent engineering content; Pinecone's free tier is enough for P09/P17.</p><div class="meta"><span>COST Free</span><span>DIFF Medium-hard</span><span>VALUE High</span></div><div class="links"><a class="rl" href="https://www.youtube.com/@jamesbriggs" target="_blank" rel="noopener">James Briggs</a><a class="rl" href="https://www.youtube.com/@samwitteveenai" target="_blank" rel="noopener">Sam Witteveen</a><a class="rl" href="https://www.pinecone.io/learn/" target="_blank" rel="noopener">Pinecone Learn</a></div></div>
+    <div class="res"><h4>Agent plumbing docs · MCP, CrewAI, RAGAS</h4><p>The three things Year-3 interviews actually probe: tool protocols, orchestration, and whether you can measure answer quality. Pair MCP with P10/P12, CrewAI with P15, RAGAS with P17.</p><div class="meta"><span>COST Free</span><span>DIFF Medium-hard</span><span>VALUE High 2026-28 signal</span></div><div class="links"><a class="rl" href="https://modelcontextprotocol.io" target="_blank" rel="noopener">MCP docs</a><a class="rl" href="https://docs.crewai.com" target="_blank" rel="noopener">CrewAI docs</a><a class="rl" href="https://docs.ragas.io" target="_blank" rel="noopener">RAGAS docs</a></div></div>
+    <div class="res"><h4>Linux CLI + Docker basics · just-in-time</h4><p>Two focused weeks, learned the day you self-host n8n or deploy an agent for a client. Ubuntu's official CLI tutorial for the shell, then Docker's official Get Started.</p><div class="meta"><span>COST Free</span><span>TIME 2 wks</span><span>VALUE Medium, then suddenly essential</span></div><div class="links"><a class="rl" href="https://ubuntu.com/tutorials/command-line-for-beginners" target="_blank" rel="noopener">Ubuntu CLI tutorial</a><a class="rl" href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Docker · Get Started</a></div></div>
+    <div class="res"><h4>NAATI CCL · Hindi</h4><p><b>+5 Australian points, valid 3 years</b> — sit it in Year 3 so it's fresh when the EOI lodges. 4-8 weeks of dialogue practice; book the slot early, sessions fill.</p><div class="meta"><span>COST ~AUD 220 (₹12-13K)</span><span>TIME 4-8 wks prep</span><span>VALUE +5 points</span></div><div class="links"><a class="rl" href="https://www.naati.com.au/migration-assessments/ccl/" target="_blank" rel="noopener">NAATI CCL · official</a></div></div>
+    <div class="res"><h4>immi.homeaffairs.gov.au + SkillSelect</h4><p>Points calculator, fees, occupation lists, invitation-round data. The only Australian source that counts; forums are commentary, this is law.</p><div class="meta"><span>COST Free</span><span>RECOG Official</span></div><div class="links"><a class="rl" href="https://immi.homeaffairs.gov.au" target="_blank" rel="noopener">immi.homeaffairs.gov.au</a><a class="rl" href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" rel="noopener">SkillSelect</a></div></div>
+    <div class="res"><h4>VETASSESS · the skills assessment</h4><p>The assessing authority for your likely occupation codes on the self-funded route. Read the criteria and evidence lists long before paying the ₹70-80K; the MARA session below confirms the code first.</p><div class="meta"><span>COST ₹70-80K when due</span><span>VALUE Gate for 190/491</span><span>RECOG Official</span></div><div class="links"><a class="rl" href="https://www.vetassess.com.au" target="_blank" rel="noopener">vetassess.com.au</a></div></div>
+    <div class="res"><h4>One paid MARA review session</h4><p>₹10-25K, once, before paying for any skills assessment: confirm occupation code, evidence strategy and list availability. Do not hire end-to-end; do not skip this either.</p><div class="meta"><span>COST ₹10-25K</span><span>VALUE Highest-ROI spend in the plan</span></div><div class="links"><a class="rl" href="https://www.mara.gov.au" target="_blank" rel="noopener">MARA agent register</a></div></div>
+    <div class="res"><h4>YouTube ground truth: AU + DE</h4><p>Australia: channels run by MARA-registered agents covering 189/190/491 strategy and round results. Germany: Simple Germany and Bharat in Germany for Chancenkarte and on-ground reality. Cross-check everything against the official sites above.</p><div class="meta"><span>COST Free</span><span>VALUE Orientation, not law</span></div><div class="links"><a class="rl" href="https://www.youtube.com/results?search_query=australia+189+190+491+invitation+rounds+mara+agent" target="_blank" rel="noopener">AU 189/190/491 · search</a><a class="rl" href="https://www.youtube.com/@simplegermany" target="_blank" rel="noopener">Simple Germany</a><a class="rl" href="https://www.youtube.com/@BharatInGermany" target="_blank" rel="noopener">Bharat in Germany</a></div></div>
+    <div class="res"><h4>German B1 · the pivot level (DE route only)</h4><p>Nicos Weg B1 + Easy German on the commute + 1-2 italki sessions/week (₹600-1,200/hr). Sit <b>Goethe or telc B1</b>: stronger Chancenkarte score, Blue-Card PR at 21 months instead of 27.</p><div class="meta"><span>COST Exam ₹14-20K</span><span>TIME months 8-15 of German</span><span>VALUE DE pivot level</span></div><div class="links"><a class="rl" href="https://learngerman.dw.com" target="_blank" rel="noopener">Nicos Weg B1</a><a class="rl" href="https://www.easygerman.fm" target="_blank" rel="noopener">Easy German</a><a class="rl" href="https://www.italki.com" target="_blank" rel="noopener">italki</a><a class="rl" href="https://www.goethe.de/ins/in/en/spr/prf.html" target="_blank" rel="noopener">Goethe</a><a class="rl" href="https://www.telc.net" target="_blank" rel="noopener">telc</a></div></div>
   </div>
 
-  <!-- ======= YEAR 4 ======= -->
-  <div class="yr-pane" id="res-y4">
-    <span class="yr-label y4">Year 4 · Jun 2029 – Jun 2030</span>
-    <p class="sub">Transition year. Expert-level projects, EOI submitted in SkillSelect (190 + 491), visa corpus untouchable. Agile/Scrum vocabulary as polish. Exit: EOI live, visa lodged or invitation received.</p>
-
-    <div class="callout de"><b>Year 4 focus areas: </b>
-      <span class="focus-pill" style="color:var(--de-strong);border-color:var(--de-strong)">RAG evaluation harness</span>
-      <span class="focus-pill" style="color:var(--de-strong);border-color:var(--de-strong)">AI ops monitoring</span>
-      <span class="focus-pill" style="color:var(--de-strong);border-color:var(--de-strong)">SkillSelect EOI submitted</span>
-      <span class="focus-pill" style="color:var(--de-strong);border-color:var(--de-strong)">Agile / Scrum vocabulary</span>
-      <span class="focus-pill" style="color:var(--de-strong);border-color:var(--de-strong)">LinkedIn engine at peak</span>
-      <span class="focus-pill" style="color:var(--de-strong);border-color:var(--de-strong)">Senior AU/DE networking</span>
-    </div>
-
-    <div class="daily-block">
-      <h4>📅 Daily study routine · Year 4 (~1 hr/day — less learning, more building + networking)</h4>
-      <div class="daily-row">
-        <span class="daily-time">06:00–06:40</span>
-        <div class="daily-act">
-          <b>Production-grade project completion (P15–P18)</b>
-          <p>Finish the RAG Evaluation Harness (P17) and AI Ops Monitoring Dashboard (P18). Quality over count — six deep repos beats twelve shallow.</p>
-          <div class="links">
-            <a class="rl" href="https://docs.ragas.io" target="_blank" rel="noopener">RAGAS · RAG evaluation framework</a>
-            <a class="rl" href="https://streamlit.io/docs" target="_blank" rel="noopener">Streamlit docs (for dashboards)</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">21:00–21:30</span>
-        <div class="daily-act">
-          <b>Agile/Scrum vocabulary + optional CAPM (Month 37-40)</b>
-          <p>The free path: Atlassian's Agile Coach guides + Scrum.org materials. CAPM only as Y4 polish — skippable if budget is tight.</p>
-          <div class="links">
-            <a class="rl" href="https://www.atlassian.com/agile" target="_blank" rel="noopener">Atlassian Agile Coach (free)</a>
-            <a class="rl" href="https://www.scrum.org/resources/scrum-guide" target="_blank" rel="noopener">Scrum Guide (free)</a>
-            <a class="rl" href="https://www.pmi.org/certifications/certified-associate-capm" target="_blank" rel="noopener">CAPM · PMI (optional)</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Weekend · Sat</span>
-        <div class="daily-act">
-          <b>SkillSelect EOI management + visa prep</b>
-          <p>EOI submitted Month 26-32. Year 4: track invitation rounds, maintain 482 sponsor pipeline (20 target companies, 5 contacted warm).</p>
-          <div class="links">
-            <a class="rl" href="https://immi.homeaffairs.gov.au" target="_blank" rel="noopener">immi.homeaffairs.gov.au</a>
-            <a class="rl" href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" rel="noopener">SkillSelect · EOI portal</a>
-            <a class="rl" href="https://www.youtube.com/results?search_query=australia+189+190+491+invitation+rounds+mara+agent" target="_blank" rel="noopener">AU visa rounds · MARA YouTube</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Weekend · Sun</span>
-        <div class="daily-act">
-          <b>LinkedIn engine + AU/DE networking (peak activity)</b>
-          <p>2 posts/week. Target 2-3 hiring managers/month, opened with a relevant project. 150-200 genuine relationships by Year 4.</p>
-          <div class="links">
-            <a class="rl" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="rl" href="https://www.seek.com.au" target="_blank" rel="noopener">Seek · AU job board</a>
-            <a class="rl" href="https://www.stepstone.de" target="_blank" rel="noopener">StepStone · DE</a>
-            <a class="rl" href="https://www.xing.com" target="_blank" rel="noopener">XING · DE professional network</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3>Year 4 · all study materials</h3>
-    <div class="grid2">
-      <div class="res"><h4>RAGAS · RAG evaluation framework</h4><p>Open-source framework for measuring faithfulness, relevance and retrieval hit-rate. The "I measure AI quality" line that barely anyone else on a resume has.</p><div class="meta"><span>COST Free</span><span>VALUE Rare signal</span></div><div class="links"><a class="rl" href="https://docs.ragas.io" target="_blank" rel="noopener">RAGAS docs</a><a class="rl" href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener">RAGAS · GitHub</a></div></div>
-      <div class="res"><h4>Streamlit / Grafana (monitoring dashboards)</h4><p>For P18: watching all running automations, failures, latency, token spend. Streamlit for Python-native dashboards; Grafana if going production.</p><div class="meta"><span>COST Free</span><span>TIME 1-2 wks</span></div><div class="links"><a class="rl" href="https://streamlit.io/docs" target="_blank" rel="noopener">Streamlit docs</a><a class="rl" href="https://grafana.com/docs/grafana/latest/getting-started/" target="_blank" rel="noopener">Grafana getting started</a></div></div>
-      <div class="res"><h4>Atlassian Agile Coach + Scrum Guide</h4><p>Free, authoritative. Enough to hold delivery conversations abroad without buying the CAPM cert.</p><div class="meta"><span>COST Free</span><span>TIME 1-2 wks</span></div><div class="links"><a class="rl" href="https://www.atlassian.com/agile" target="_blank" rel="noopener">Atlassian Agile Coach</a><a class="rl" href="https://www.scrum.org/resources/scrum-guide" target="_blank" rel="noopener">Scrum Guide</a></div></div>
-      <div class="res"><h4>immi.homeaffairs.gov.au + SkillSelect</h4><p>EOI management, invitation-round tracking, occupation list monitoring. The only Australian source that counts.</p><div class="meta"><span>COST Free</span><span>RECOG Official</span></div><div class="links"><a class="rl" href="https://immi.homeaffairs.gov.au" target="_blank" rel="noopener">immi.homeaffairs.gov.au</a><a class="rl" href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" rel="noopener">SkillSelect</a></div></div>
-      <div class="res"><h4>Job boards: AU + DE</h4><p>Seek and LinkedIn AU for Australia. StepStone, XING, Join.com, EnglishJobs.de, Berlin Startup Jobs for Germany.</p><div class="meta"><span>COST Free</span></div><div class="links"><a class="rl" href="https://www.seek.com.au" target="_blank" rel="noopener">Seek · AU</a><a class="rl" href="https://www.indeed.com.au" target="_blank" rel="noopener">Indeed AU</a><a class="rl" href="https://www.stepstone.de" target="_blank" rel="noopener">StepStone · DE</a><a class="rl" href="https://www.xing.com" target="_blank" rel="noopener">XING</a><a class="rl" href="https://berlinstartupjobs.com" target="_blank" rel="noopener">Berlin Startup Jobs</a></div></div>
-      <div class="res"><h4>CAPM · PMI (optional polish)</h4><p>~US$225-300 + membership. Employability only — zero visa points. Skip if budget is tight; do only as Y4 polish if time permits.</p><div class="meta"><span>COST ~US$225-300</span><span>TIME 2-3 mo</span><span>VALUE Employability only</span></div><div class="links"><a class="rl" href="https://www.pmi.org/certifications/certified-associate-capm" target="_blank" rel="noopener">CAPM · PMI</a></div></div>
-    </div>
+  <h3>Years 4-5 · 2029 → 2031 · offers, lodgement, landing</h3>
+  <div class="card de" style="margin-bottom:14px"><h4>Your Year-4/5 rhythm · sharper, not longer</h4>
+    <div class="slot"><span class="t">06:30</span><div><b>Applications, weaponised</b><p>Same 30-minute rhythm as Year 3, fewer and deeper: 2-3 fully tailored applications per week beat 20 sprayed ones.</p></div></div>
+    <div class="slot"><span class="t">Sat 09:00</span><div><b>Deep job-hunt session · 2 h</b><p>Research 5 target companies (<a href="https://www.glassdoor.com" target="_blank" rel="noopener">Glassdoor</a> / <a href="https://www.kununu.com" target="_blank" rel="noopener">Kununu</a>), send 3 strong applications via the boards below.</p></div></div>
+    <div class="slot"><span class="t">Sat 11:00</span><div><b>Visa admin · 1 h</b><p>One checklist section per weekend; the application finishes itself in 8-10 weeks.</p></div></div>
+    <div class="slot"><span class="t">Sun</span><div><b>Portfolio + LinkedIn · 1 h</b><p>Keep shipping in public. Recruiters check recency before they check depth.</p></div></div>
+  </div>
+  <div class="grid2">
+    <div class="res"><h4>Australia job boards</h4><p>Seek is the market; LinkedIn AU is where the recruiters from the Jobs tab quotas live; Indeed AU for volume. Saved searches + daily alerts for each target role title.</p><div class="meta"><span>COST Free</span><span>VALUE Primary AU channel</span></div><div class="links"><a class="rl" href="https://www.seek.com.au" target="_blank" rel="noopener">Seek</a><a class="rl" href="https://www.linkedin.com/jobs" target="_blank" rel="noopener">LinkedIn Jobs</a><a class="rl" href="https://au.indeed.com" target="_blank" rel="noopener">Indeed AU</a></div></div>
+    <div class="res"><h4>Germany job boards · English-first lane</h4><p>StepStone + XING for the broad market; Join, EnglishJobs.de and Berlin Startup Jobs for English-first companies; the official make-it-in-germany board for visa-friendly listings.</p><div class="meta"><span>COST Free</span><span>VALUE Primary DE channel</span></div><div class="links"><a class="rl" href="https://www.stepstone.de" target="_blank" rel="noopener">StepStone</a><a class="rl" href="https://www.xing.com/jobs" target="_blank" rel="noopener">XING Jobs</a><a class="rl" href="https://join.com" target="_blank" rel="noopener">Join</a><a class="rl" href="https://www.englishjobs.de" target="_blank" rel="noopener">EnglishJobs.de</a><a class="rl" href="https://berlinstartupjobs.com" target="_blank" rel="noopener">Berlin Startup Jobs</a><a class="rl" href="https://www.make-it-in-germany.com/en/working-in-germany/job-listings" target="_blank" rel="noopener">make-it-in-germany jobs</a></div></div>
+    <div class="res"><h4>Company + salary ground truth</h4><p>Glassdoor for AU salary bands and interview reports; Kununu is Germany's Glassdoor. Check every sponsored AU target against the <span class="mono">AUD 79,499</span> floor before investing a tailored application.</p><div class="meta"><span>COST Free</span><span>VALUE Saves wasted applications</span></div><div class="links"><a class="rl" href="https://www.glassdoor.com" target="_blank" rel="noopener">Glassdoor</a><a class="rl" href="https://www.kununu.com" target="_blank" rel="noopener">Kununu</a></div></div>
+    <div class="res"><h4>make-it-in-germany.com + anabin + ZAB</h4><p>Chancenkarte self-check, degree recognition database, Statement of Comparability ordering. Bookmark all three before any German step.</p><div class="meta"><span>COST Free; ZAB ≈ €208</span><span>RECOG Official</span></div><div class="links"><a class="rl" href="https://www.make-it-in-germany.com/en" target="_blank" rel="noopener">make-it-in-germany</a><a class="rl" href="https://anabin.kmk.org" target="_blank" rel="noopener">anabin</a><a class="rl" href="https://www.kmk.org/zab" target="_blank" rel="noopener">ZAB · kmk.org/zab</a></div></div>
+    <div class="res"><h4>German B2 · the real job market (DE route only)</h4><p>B2 textbook track (Aspekte/Sicher!) + weekly tutoring + German-language job ads as study material. B2 certified opens the 70-80% of the market that A-levels cannot touch; finishable on the ground after landing.</p><div class="meta"><span>COST Exam ₹16-22K</span><span>TIME months 15-24 of German</span><span>VALUE DE market access</span></div><div class="links"><a class="rl" href="https://www.klett-sprachen.de" target="_blank" rel="noopener">Aspekte · Klett</a><a class="rl" href="https://www.hueber.de/sicher" target="_blank" rel="noopener">Sicher! · Hueber</a><a class="rl" href="https://www.osd.at" target="_blank" rel="noopener">ÖSD</a><a class="rl" href="https://www.goethe.de/ins/in/en/spr/prf.html" target="_blank" rel="noopener">Goethe</a></div></div>
+    <div class="res"><h4>CAPM (PMI) · polish, skippable</h4><p>Employability vocabulary only — <b>zero visa points</b>. Take it in Year 4 only if a target JD explicitly asks for project-management credentials; otherwise the budget guard-rail says no.</p><div class="meta"><span>COST ~US$225-300 + membership</span><span>TIME 2-3 mo</span><span>VALUE Low-medium</span></div><div class="links"><a class="rl" href="https://www.pmi.org/certifications/certified-associate-capm" target="_blank" rel="noopener">CAPM · pmi.org</a></div></div>
   </div>
 
-  <!-- ======= YEAR 5 ======= -->
-  <div class="yr-pane" id="res-y5">
-    <span class="yr-label y5">Year 5 · Jun 2030 – Jun 2031</span>
-    <p class="sub">Landing year. Visa granted, activation flight booked, relocation executed. P20 Open-Source Playbook published. On-ground: TFN, bank, SIM, Medicare in Week 1. Job secured within first 6 months of landing.</p>
-
-    <div class="callout" style="background:#EDE8F8;color:var(--ink)"><b>Year 5 focus areas: </b>
-      <span class="focus-pill" style="color:#6B4EAA;border-color:#6B4EAA">Visa lodgement + grant</span>
-      <span class="focus-pill" style="color:#6B4EAA;border-color:#6B4EAA">P20 Open-Source Playbook</span>
-      <span class="focus-pill" style="color:#6B4EAA;border-color:#6B4EAA">Relocation execution</span>
-      <span class="focus-pill" style="color:#6B4EAA;border-color:#6B4EAA">On-ground job search</span>
-      <span class="focus-pill" style="color:#6B4EAA;border-color:#6B4EAA">German B2 (if DE route)</span>
-      <span class="focus-pill" style="color:#6B4EAA;border-color:#6B4EAA">PR clock management</span>
-    </div>
-
-    <div class="daily-block">
-      <h4>📅 Daily study routine · Year 5 (pre-landing: 45 min/day · post-landing: on-the-job learning)</h4>
-      <div class="daily-row">
-        <span class="daily-time">Pre-landing</span>
-        <div class="daily-act">
-          <b>P20 Open-Source Playbook + portfolio final polish</b>
-          <p>Publish the patterns from P01-P19 as a documented, open framework. This is the long-tail career asset that keeps working after you land.</p>
-          <div class="links">
-            <a class="rl" href="https://github.com" target="_blank" rel="noopener">GitHub (publish playbook)</a>
-            <a class="rl" href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages (free hosting)</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Pre-landing</span>
-        <div class="daily-act">
-          <b>Visa lodgement + medicals + police clearance</b>
-          <p>190/491: AUD 4,910 fee. 482: AUD 3,210 (often employer-paid). Medicals via DIBP-approved panel physician. PCC via Passport Seva.</p>
-          <div class="links">
-            <a class="rl" href="https://immi.homeaffairs.gov.au" target="_blank" rel="noopener">immi.homeaffairs.gov.au</a>
-            <a class="rl" href="https://www.mara.gov.au" target="_blank" rel="noopener">MARA agent register</a>
-            <a class="rl" href="https://passportindia.gov.in" target="_blank" rel="noopener">Passport Seva · PCC</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">Week 1 (AU)</span>
-        <div class="daily-act">
-          <b>Landing checklist: TFN + bank + Medicare + SIM</b>
-          <p>TFN via ATO online (same week). Bank account: CommBank or NAB (open before arrival via international app). Medicare enrolment at a Service Centre.</p>
-          <div class="links">
-            <a class="rl" href="https://www.ato.gov.au/individuals-and-families/tax-file-number" target="_blank" rel="noopener">ATO · TFN application</a>
-            <a class="rl" href="https://www.servicesaustralia.gov.au/medicare" target="_blank" rel="noopener">Medicare · Services Australia</a>
-            <a class="rl" href="https://www.commbank.com.au/personal/apply-online/download-the-app.html" target="_blank" rel="noopener">CommBank (open before arrival)</a>
-          </div>
-        </div>
-      </div>
-      <div class="daily-row">
-        <span class="daily-time">On-ground</span>
-        <div class="daily-act">
-          <b>Job secured · PR clock started</b>
-          <p>186 nomination at 2 years (482 route) or residency obligations met (190/491). German B2 on the ground if DE route chosen.</p>
-          <div class="links">
-            <a class="rl" href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/employer-nomination-scheme-186" target="_blank" rel="noopener">186 visa (PR from 482)</a>
-            <a class="rl" href="https://www.goethe.de/ins/au/en/spr/prf.html" target="_blank" rel="noopener">Goethe B2 in Australia</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3>Year 5 · migration reference sites</h3>
-    <div class="grid2">
-      <div class="res"><h4>immi.homeaffairs.gov.au + SkillSelect</h4><p>Points calculator, fees, occupation lists, invitation-round data. The only Australian source that counts; forums are commentary, this is law.</p><div class="meta"><span>COST Free</span><span>RECOG Official</span></div><div class="links"><a class="rl" href="https://immi.homeaffairs.gov.au" target="_blank" rel="noopener">immi.homeaffairs.gov.au</a><a class="rl" href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" rel="noopener">SkillSelect</a></div></div>
-      <div class="res"><h4>make-it-in-germany.com + anabin + ZAB</h4><p>Chancenkarte self-check, degree recognition database, Statement of Comparability. Bookmark all three before any German step.</p><div class="meta"><span>COST Free; ZAB ≈ €208</span><span>RECOG Official</span></div><div class="links"><a class="rl" href="https://www.make-it-in-germany.com/en" target="_blank" rel="noopener">make-it-in-germany</a><a class="rl" href="https://anabin.kmk.org" target="_blank" rel="noopener">anabin</a><a class="rl" href="https://www.kmk.org/zab" target="_blank" rel="noopener">ZAB · kmk.org/zab</a></div></div>
-      <div class="res"><h4>YouTube ground truth: AU + DE</h4><p>MARA-registered agent channels for 189/190/491 round results. Simple Germany + Bharat in Germany for Chancenkarte reality.</p><div class="meta"><span>COST Free</span><span>VALUE Orientation, not law</span></div><div class="links"><a class="rl" href="https://www.youtube.com/results?search_query=australia+189+190+491+invitation+rounds+mara+agent" target="_blank" rel="noopener">AU 189/190/491 · search</a><a class="rl" href="https://www.youtube.com/@simplegermany" target="_blank" rel="noopener">Simple Germany</a><a class="rl" href="https://www.youtube.com/@BharatInGermany" target="_blank" rel="noopener">Bharat in Germany</a></div></div>
-      <div class="res"><h4>One paid MARA review session</h4><p>₹10-25K, once, before paying for any skills assessment. Confirm occupation code, evidence strategy and list availability. Highest-ROI spend in the plan.</p><div class="meta"><span>COST ₹10-25K</span><span>VALUE Highest ROI single spend</span></div><div class="links"><a class="rl" href="https://www.mara.gov.au" target="_blank" rel="noopener">MARA agent register</a></div></div>
-    </div>
-  </div>
-
-  <script>
-  function showYear(id, btn) {
-    document.querySelectorAll('.yr-pane').forEach(function(p){ p.classList.remove('active'); });
-    document.querySelectorAll('.yr-tab').forEach(function(t){ t.classList.remove('active'); });
-    var pane = document.getElementById('res-' + id);
-    if (pane) pane.classList.add('active');
-    if (btn) btn.classList.add('active');
-  }
-  </script>
+  <div class="callout info"><b>Need a topic, not a year?</b> English → Y1 · Excel / SQL / data → Y1 · Git &amp; GitHub → Y1 · Python → Y1-2 · n8n / Make / Zapier → Y1-2 · APIs → Y2 · AWS / Power BI → Y2 · agents &amp; RAG → Y2-3 · German → Y2-4 (full path in the German tab) · NAATI / VETASSESS / MARA / immi → Y3 · job boards &amp; salary research → Y3-5.</div>
 </section>
 
 <!-- ================= CERTIFICATIONS ================= -->
@@ -1393,13 +1025,13 @@ footer .wrap{display:grid;gap:8px}
     secs.forEach(function(s){s.classList.toggle("on",s.id===id)});
     tabs.forEach(function(t){t.classList.toggle("on",t.dataset.t===id)});
     try{localStorage.setItem(LS_TAB,id)}catch(e){}
-    if(push){ try{ if(history.replaceState) history.replaceState(null,"","#"+id); }catch(e){} }
+    if(push){ if(history.replaceState) history.replaceState(null,"","#"+id); }
     var active=document.querySelector(".tab.on");
     if(active&&active.scrollIntoView) active.scrollIntoView({block:"nearest",inline:"center"});
   }
   tabs.forEach(function(t){t.addEventListener("click",function(){show(t.dataset.t,true);window.scrollTo({top:0})})});
-  try{window.addEventListener("hashchange",function(){show(location.hash.replace("#",""),false)});}catch(e){}
-  var start=null;try{start=location.hash?location.hash.replace("#",""):null;}catch(e){}
+  window.addEventListener("hashchange",function(){show(location.hash.replace("#",""),false)});
+  var start=location.hash?location.hash.replace("#",""):null;
   if(!start){try{start=localStorage.getItem(LS_TAB)}catch(e){}}
   show(start||"overview",false);
 
